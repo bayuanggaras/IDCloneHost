@@ -196,7 +196,7 @@ export function FAQSection(props: FAQSectionProps) {
             <h3 className="font-bold text-[#1b2c42] text-xl sm:text-2xl mb-4">
               {faqs[openIndex].question}
             </h3>
-            <p className="text-[#233955] text-base leading-relaxed">
+            <p className="text-[#8292A6] text-base leading-relaxed">
               {faqs[openIndex].answer}
             </p>
           </div>

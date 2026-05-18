@@ -17,7 +17,7 @@ export default function Homepage() {
       {/* Hero dengan konten berbeda */}
       <HeroSection
         titleClassName="text-3xl sm:text-5xl lg:text-[64px]"
-        containerClassName="relative z-10 max-w-7xl mx-auto px-5 md:px-10 lg:px-16 pt-24 pb-1"
+        containerClassName="relative z-10 max-w-7xl mx-auto px-5 md:px-10 lg:px-16 pt-24 pb-24"
         promoBannerImg={promoBannerImg}
         title="Cloud Server Terjangkau & Fleksible Kini Lebih Cepat!"
         description="Luncurkan Layanan Cloud dengan Membayar Sesuai Pemakaian dalam Sekali Klik!"
