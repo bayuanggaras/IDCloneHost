@@ -385,8 +385,9 @@ export function ProductMegaMenu({ onMouseEnter, onMouseLeave }: MegaMenuProps) {
           </div>
 
           {/* Konten Kanan */}
-          <div className="flex-1 p-8 bg-white min-h-[420px]">
+          <div className="flex-1 p-8 bg-white">
             <h3 className="text-xl font-bold mb-6 text-slate-800">{activeTab}</h3>
+
             <div
               key={activeTab}
               className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300"
@@ -415,52 +416,50 @@ export function SolutionMegaMenu({ onMouseEnter, onMouseLeave }: MegaMenuProps) 
     <div
       className="fixed left-1/2 -translate-x-1/2 pt-2 z-[101]"
       style={{ top: "64px", width: "min(1200px, 95vw)" }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
-      <div
-        className="bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col text-slate-800"
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-      >
-        {/* Tab horizontal */}
-        <div className="flex gap-3 px-6 py-4 border-b border-slate-200 bg-white">
-          {Object.keys(solutionData).map((cat) => (
-            <button
-              key={cat}
-              onMouseEnter={() => setActiveTab(cat)}
-              className={`cursor-pointer px-4 py-2 rounded-lg border text-sm font-semibold transition-all ${
-                activeTab === cat
-                  ? "bg-[#016dfc] text-white border-[#016dfc]"
-                  : "bg-white text-slate-600 border-slate-200 hover:border-[#016dfc] hover:text-[#016dfc]"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+      <div className="bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col text-slate-800">
 
-        {/* Konten */}
-        <div className="p-8 bg-white min-h-[40px]">
-          <h3 className="text-xl font-bold mb-6">{activeTab}</h3>
-          <div
-            key={activeTab}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 opacity-0 translate-y-3 animate-[menuFade_0.25s_ease-out_forwards]"
-          >
-            {solutionData[activeTab].map((item, i) => (
-              <ProductCard key={i} product={item} />
+        <div className="flex">
+          {/* Sidebar Kiri */}
+          <div className="w-[260px] bg-white py-4 border-r border-slate-100 flex-shrink-0">
+            {Object.keys(solutionData).map((cat) => (
+              <button
+                key={cat}
+                onMouseEnter={() => setActiveTab(cat)}
+                className={`w-full text-left px-6 py-4 text-sm font-semibold transition-colors relative ${
+                  activeTab === cat
+                    ? "bg-[#eaf2ff] text-[#016dfc]"
+                    : "text-slate-600 hover:bg-slate-50"
+                }`}
+              >
+                {activeTab === cat && (
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#016dfc]" />
+                )}
+                {cat}
+              </button>
             ))}
+          </div>
+
+          {/* Konten Kanan */}
+          <div className="flex-1 p-8 bg-white">
+            <h3 className="text-xl font-bold mb-6 text-slate-800">{activeTab}</h3>
+
+            <div
+              key={activeTab}
+              className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 overflow-y-auto pr-1 animate-in fade-in slide-in-from-bottom-2 duration-300"
+              style={{ maxHeight: "calc(2 * (88px + 1rem))" }}
+            >
+              {solutionData[activeTab].map((item, i) => (
+                <ProductCard key={i} product={item} />
+              ))}
+            </div>
           </div>
         </div>
 
         <MenuFooter />
       </div>
-
-      {/* Keyframe animasi solusi */}
-      <style>{`
-        @keyframes menuFade {
-          from { opacity: 0; transform: translateY(12px); }
-          to   { opacity: 1; transform: translateY(0px);  }
-        }
-      `}</style>
     </div>
   );
 }
