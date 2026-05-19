@@ -23,7 +23,6 @@ const solutionData: Record<string, ProductItem[]> = {
         </svg>
       )
     },
-
     {
       name: "Finance",
       desc: "Mengelola finansial company Anda dengan solusi layanan yang aman dan terpercaya.",
@@ -36,7 +35,6 @@ const solutionData: Record<string, ProductItem[]> = {
         </svg>
       )
     },
-
     {
       name: "Retail",
       desc: "Meningkatkan bisnis retail Anda menjadi lebih efisien dengan kinerja yang maksimal.",
@@ -49,72 +47,62 @@ const solutionData: Record<string, ProductItem[]> = {
         </svg>
       )
     },
+    { 
+    name: "Tour & Travel", 
+    desc: "Menawarkan sistem terdepan dengan teknologi canggih untuk bisnis tour dan travel Anda.", 
+    href: "/cloud-solution", 
+    icon: ( <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+        strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> 
+        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" /> 
+        </svg> 
+        ) 
+        }, 
+    { 
+        name: "e-Commerce", 
+        desc: "Mengoptimalkan pertumbuhan bisnis E-Commerce Anda dengan aman dan scalable.", 
+        href: "/cloud-solution", icon: ( <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+        </svg> 
+        ) 
+    }, 
 
-    {
-      name: "Tour & Travel",
-      desc: "Menawarkan sistem terdepan dengan teknologi canggih untuk bisnis tour dan travel Anda.",
-      href: "/cloud-solution",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
-        </svg>
-      )
-    },
-
-    {
-      name: "e-Commerce",
-      desc: "Mengoptimalkan pertumbuhan bisnis E-Commerce Anda dengan aman dan scalable.",
-      href: "/cloud-solution",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
-        </svg>
-      )
-    },
-
-    {
-      name: "Manufacturing & Distribution",
-      desc: "Meningkatkan produktivitas bisnis manufaktur dan distribusi Anda menjadi lebih optimal.",
-      href: "/cloud-solution",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
-        </svg>
-      )
-    },
-
-    {
-      name: "Medical & Healthcare",
-      desc: "Memberikan layanan solusi yang inovatif untuk mendukung efisiensi pelayanan dan kualitas kesehatan lebih baik.",
-      href: "/cloud-solution",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
-        </svg>
-      )
-    },
-
-    {
-      name: "Media",
-      desc: "Mendukung kebutuhan pada industri media Anda dengan kecepatan dan skalabilitas tanpa batas.",
-      href: "/cloud-solution",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
-        </svg>
-      )
-    }
-  ],
+    { 
+        name: "Manufacturing & Distribution", 
+        desc: "Meningkatkan produktivitas bisnis manufaktur dan distribusi Anda menjadi lebih optimal.", 
+        href: "/cloud-solution", icon: ( <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+        </svg> 
+        ) 
+    }, 
+    
+    { 
+        name: "Medical & Healthcare",
+        desc: "Memberikan layanan solusi yang inovatif untuk mendukung efisiensi pelayanan dan kualitas kesehatan lebih baik.",
+        href: "/cloud-solution",
+        icon: ( <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" /> 
+            </svg> 
+            ) 
+        }, 
+        
+    { 
+        name: "Media",
+        desc: "Mendukung kebutuhan pada industri media Anda dengan kecepatan dan skalabilitas tanpa batas.",
+        href: "/cloud-solution",
+        icon: ( <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"> 
+            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" /> 
+            </svg> 
+            ) 
+        } 
+    ],
 
   "Solution by Apps": [
     {
@@ -133,7 +121,6 @@ const solutionData: Record<string, ProductItem[]> = {
         </svg>
       )
     },
-
     {
       name: "Paperclip",
       desc: "Paperclip memudahkan Anda mengatur dan mengelola pekerjaan dalam satu sistem.",
@@ -167,25 +154,20 @@ export function SolutionMegaMenu({
       className="fixed left-1/2 -translate-x-1/2 pt-2 z-[101]"
       style={{ top: "64px", width: "min(1200px, 95vw)" }}
     >
-      {/* 🔥 HOVER SAFE AREA (FIX BUG CLOSE MENU) */}
       <div
         className="bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col text-slate-800"
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
 
-        {/* ================================================= */}
-        {/* TAB HEADER (FIXED STYLE + BORDER + CURSOR) */}
-        {/* ================================================= */}
+        {/* TAB */}
         <div className="flex gap-3 px-6 py-4 border-b border-slate-200 bg-white">
-
           {Object.keys(solutionData).map((cat) => (
             <button
               key={cat}
               onMouseEnter={() => setActiveTab(cat)}
               className={`
-                cursor-pointer
-                px-4 py-2 rounded-lg border text-sm font-semibold transition-all
+                cursor-pointer px-4 py-2 rounded-lg border text-sm font-semibold transition-all
                 ${
                   activeTab === cat
                     ? "bg-[#016dfc] text-white border-[#016dfc]"
@@ -198,14 +180,20 @@ export function SolutionMegaMenu({
           ))}
         </div>
 
-        {/* ================================================= */}
-        {/* CONTENT GRID (4 COLUMN READY) */}
-        {/* ================================================= */}
+        {/* CONTENT */}
         <div className="p-8 bg-white min-h-[40px]">
           <h3 className="text-xl font-bold mb-6">{activeTab}</h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {/* 🔥 ANIMASI SERAGAM (FADE + SLIDE UP) */}
+          <div
+            key={activeTab}
+            className="
+              grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4
 
+              opacity-0 translate-y-3
+              animate-[menuFade_0.25s_ease-out_forwards]
+            "
+          >
             {solutionData[activeTab].map((item, i) => (
               <div
                 key={i}
@@ -235,26 +223,40 @@ export function SolutionMegaMenu({
                 </div>
               </div>
             ))}
-
           </div>
         </div>
 
-        {/* Footer */}
+        {/* FOOTER */}
         <div className="bg-[#016dfc] p-8 flex flex-col lg:flex-row justify-between items-center text-white gap-6">
           <div className="flex flex-col lg:flex-row lg:items-center gap-6 flex-1 w-full">
             <h4 className="text-2xl font-bold leading-tight min-w-[180px]">
               Request<br />Penawaran
             </h4>
             <p className="text-sm opacity-95 leading-relaxed max-w-2xl">
-              Anda butuh spesifikasi server custom untuk kebutuhan bisnis Anda? Silakan ajukan formulir{" "}
-              <strong>Request Penawaran</strong> server custom yang akan dibantu oleh tim IDCloudHost.{" "}
-              <strong>Konsultasi Gratis!</strong>
+              Anda butuh spesifikasi server custom untuk kebutuhan bisnis Anda?
             </p>
           </div>
-          <button className="px-6 py-3 rounded-lg bg-white text-slate-800 font-bold text-sm hover:bg-slate-50 transition-all flex-shrink-0 active:scale-95">
+
+          <button className="px-6 py-3 rounded-lg bg-white text-slate-800 font-bold text-sm hover:bg-slate-50 transition-all active:scale-95">
             Selengkapnya
           </button>
         </div>
+
+        {/* ANIMATION KEYFRAME */}
+        <style>
+          {`
+            @keyframes menuFade {
+              from {
+                opacity: 0;
+                transform: translateY(12px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0px);
+              }
+            }
+          `}
+        </style>
 
       </div>
     </div>
