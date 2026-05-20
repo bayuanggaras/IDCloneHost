@@ -281,7 +281,7 @@ const solutionData: Record<string, ProductItem[]> = {
     { name: "Government",                  desc: "Solusi infrastruktur digital yang andal untuk pemerintahan.",                                               href: "/cloud-solution", icon: solutionIconCloud },
   ],
   "Solution by Apps": [
-    { name: "OpenClaw",  desc: "AI Agent Pribadi yang Aktif 24/7 di Server Anda.",                                              badge: "HOT", href: "/backup-solution", icon: solutionIconApps },
+    { name: "OpenClaw",  desc: "AI Agent Pribadi yang Aktif 24/7 di Server Anda.",                                              badge: "HOT", href: "/openclaw", icon: solutionIconApps },
     { name: "Paperclip", desc: "Paperclip memudahkan Anda mengatur dan mengelola pekerjaan dalam satu sistem.",                               href: "/paperclip", icon: solutionIconApps },
     { name: "N8n",       desc: "Self Hosted n8n terbaik untuk otomasi & AI workflow bisnis Anda.",                                           href: "/backup-solution", icon: solutionIconApps },
   ],

@@ -20,7 +20,7 @@ import { FAQSection }     from "../components/FAQSection";
 import { CTASection }     from "../components/CTASection";
 import { Footer }         from "../components/Footer";
 import heroPaperclip from "../../assets/heropaperclip.webp";
-
+import { HeroBackground } from "../components/HeroBG";
 export default function App() {
   return (
     <div className="min-h-screen w-full">
@@ -29,6 +29,7 @@ export default function App() {
               rightContentMode="image"
               image={heroPaperclip} 
               imageAlt="Ilustrasi Layanan Paperclip"
+              
       
               title="Kelola Semua Kebutuhan AI Anda dengan Paperclip"
               description="Paperclip memudahkan Anda mengatur dan mengelola pekerjaan dalam satu sistem. Dengan alur kerja yang jelas, setiap proses dapat berjalan lebih efisien dengan keunggulan:"
@@ -39,7 +40,7 @@ export default function App() {
                 { text: "Terintegrasi dengan Berbagai Tools" },
               ]}
               buttons={[
-                { label: "Selengkapnya", variant: "primary" },
+                { label: "Lihat Panduan", variant: "primary" },
                 { label: "Mulai Sekarang", variant: "gradient" },
               ]}
       

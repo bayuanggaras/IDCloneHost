@@ -4,7 +4,7 @@ import { Navbar } from "./Navbar";
 import cPanelicon from "figma:asset/cPanel.webp";
 
 // ============================================================
-// TIPE DATA (Props)
+// TYPES
 // ============================================================
 
 interface ChecklistItem {
@@ -21,26 +21,40 @@ export interface HeroSectionProps {
   promoBannerImg?: string;
   rightContentMode?: "image" | "card";
   containerClassName?: string;
+
   title?: string;
   description?: string;
+
   checklist?: ChecklistItem[];
+
   buttons?: HeroButton[];
+
   image?: string;
   imageAlt?: string;
+
   titleClassName?: string;
+
+  // ✅ CUSTOM BACKGROUND
+  background?: React.ReactNode;
+
+  // ✅ TOGGLE CURVE
+  showCurve?: boolean;
 }
 
 // ============================================================
-// DEFAULT CONTENT
+// DEFAULT PROPS
 // ============================================================
 
 const defaultProps: Required<HeroSectionProps> = {
   promoBannerImg: "",
+
   rightContentMode: "card",
+
   containerClassName:
     "relative z-10 max-w-7xl mx-auto px-5 md:px-10 lg:px-16 pt-32 pb-24 lg:pb-32",
 
   title: "Cloud Server Terjangkau & Fleksibel Kini Lebih Cepat!",
+
   description:
     "IDCloudHost Luncurkan Layanan Cloud Dengan Membayar Sesuai Pemakaian Dalam Sekali Klik!",
 
@@ -58,9 +72,21 @@ const defaultProps: Required<HeroSectionProps> = {
   ],
 
   image: heropaperclip,
+
   imageAlt: "Paperclip AI Platform",
+
   titleClassName: "text-3xl sm:text-4xl lg:text-[44px]",
+
+  // ✅ DEFAULT BACKGROUND
+  background: null,
+
+  // ✅ DEFAULT CURVE: tampil
+  showCurve: true,
 };
+
+// ============================================================
+// ICON CHECK
+// ============================================================
 
 function CheckIcon() {
   return (
@@ -80,8 +106,9 @@ function CheckIcon() {
 }
 
 // ============================================================
-// DATA APLIKASI
+// APPS ICON
 // ============================================================
+
 const appIcons = [
   cPanelicon,
   "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg",
@@ -106,15 +133,19 @@ function ConfiguratorCard() {
 
   const basePrice = 50000;
   const totalPrice = basePrice + cpu * 20000 + ram * 10000 + storage * 650;
+
   const formattedPrice = new Intl.NumberFormat("id-ID").format(totalPrice);
 
   return (
     <div
       className="bg-white rounded-2xl p-6 lg:p-8 w-full max-w-[480px] text-slate-800 relative z-10 flex flex-col font-['Figtree']"
-      style={{ boxShadow: "0px 16px 64px 0px rgba(0,7,46,0.15)" }}
+      style={{
+        boxShadow: "0px 16px 64px 0px rgba(0,7,46,0.15)",
+      }}
     >
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
         <h3 className="text-lg font-bold">Pilih Paket</h3>
+
         <select className="border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-700 bg-slate-50 focus:outline-none focus:border-[#016dfc] cursor-pointer">
           <option>Cloud VPS eXtreme (AMD)</option>
           <option>Cloud VPS Regular (Intel)</option>
@@ -132,6 +163,7 @@ function ConfiguratorCard() {
             <span>CPU</span>
             <span>{cpu} Core</span>
           </div>
+
           <input
             type="range"
             min="1"
@@ -147,6 +179,7 @@ function ConfiguratorCard() {
             <span>RAM</span>
             <span>{ram} GB</span>
           </div>
+
           <input
             type="range"
             min="1"
@@ -162,6 +195,7 @@ function ConfiguratorCard() {
             <span>Storage</span>
             <span>{storage} GB</span>
           </div>
+
           <input
             type="range"
             min="20"
@@ -174,21 +208,18 @@ function ConfiguratorCard() {
         </div>
       </div>
 
-      {/* Grid Apps Catalog */}
+      {/* APPS GRID */}
       <div className="mb-8 bg-slate-50 rounded-xl p-3 border border-slate-100">
-        
-        {/* Container scroll dengan scrollbar kustom Tailwind */}
         <div className="grid grid-cols-5 gap-2 max-h-[110px] overflow-y-auto pr-1 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full">
           {appIcons.map((iconSrc, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className="aspect-square flex items-center justify-center rounded-lg transition-all cursor-pointer group p-1 hover:bg-white hover:shadow-sm hover:border-slate-200 border border-transparent"
             >
-              <img 
-                src={iconSrc} 
-                alt={`App Icon ${i}`} 
-                // Mengubah ukuran jadi lebih kecil (w-7 h-7)
-                className="w-7 h-7 object-contain group-hover:scale-110 transition-transform duration-200 opacity-80 group-hover:opacity-100" 
+              <img
+                src={iconSrc}
+                alt={`App Icon ${i}`}
+                className="w-7 h-7 object-contain group-hover:scale-110 transition-transform duration-200 opacity-80 group-hover:opacity-100"
               />
             </div>
           ))}
@@ -205,9 +236,6 @@ function ConfiguratorCard() {
           Deploy now
         </button>
       </div>
-      <p className="text-sm mt-6 leading-tight text-slate-500">
-        *Harga yang ditampilkan adalah simulasi. Untuk informasi ketersediaan dan detail lebih lanjut ke <a href="#" className="text-[#016dfc] hover:underline cursor-pointer">console.idcloudhost.com</a>
-      </p>
     </div>
   );
 }
@@ -228,21 +256,36 @@ export function HeroSection(props: HeroSectionProps) {
     image,
     imageAlt,
     titleClassName,
+    background,
+    showCurve,
   } = {
     ...defaultProps,
     ...props,
   };
 
   return (
-    <section
-      className="relative min-h-screen overflow-visible font-['Figtree']"
-      style={{
-        background: "linear-gradient(180deg, #0268fe 0%, #1434d6 111.56%)",
-      }}
-    >
+    <section className="relative min-h-screen overflow-hidden font-['Figtree'] bg-[#020617]">
+
+      {/* ================================================= */}
+      {/* BACKGROUND */}
+      {/* ================================================= */}
+      {background ? (
+        background
+      ) : (
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, #0268fe 0%, #1434d6 111.56%)",
+          }}
+        />
+      )}
+
       <Navbar />
 
       <div className={containerClassName}>
+
+        {/* PROMO */}
         {promoBannerImg && (
           <div className="mb-10">
             <img
@@ -254,9 +297,10 @@ export function HeroSection(props: HeroSectionProps) {
         )}
 
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
-          
+
           {/* LEFT */}
-          <div className="flex-1 text-white w-full lg:mt-full">
+          <div className="flex-1 text-white w-full relative z-10">
+
             <h1 className={`${titleClassName} font-bold leading-[1.2] mb-4`}>
               {title}
             </h1>
@@ -267,8 +311,12 @@ export function HeroSection(props: HeroSectionProps) {
 
             <div className="flex flex-col gap-3 mb-10">
               {checklist.map((item) => (
-                <div key={item.text} className="flex items-start gap-3">
+                <div
+                  key={item.text}
+                  className="flex items-start gap-3"
+                >
                   <CheckIcon />
+
                   <span className="text-white/95 text-[15px] sm:text-base">
                     {item.text}
                   </span>
@@ -280,6 +328,7 @@ export function HeroSection(props: HeroSectionProps) {
               {buttons.map((btn) => (
                 <button
                   key={btn.label}
+                  onClick={btn.onClick}
                   className="px-8 py-3.5 rounded-xl text-white font-bold shadow-md hover:-translate-y-0.5 transition cursor-pointer"
                   style={
                     btn.variant === "gradient"
@@ -287,7 +336,9 @@ export function HeroSection(props: HeroSectionProps) {
                           backgroundImage:
                             "linear-gradient(163.15deg, rgb(253, 161, 77) 0%, rgb(253, 77, 246) 100%)",
                         }
-                      : { backgroundColor: "#016dfc" }
+                      : {
+                          backgroundColor: "#016dfc",
+                        }
                   }
                 >
                   {btn.label}
@@ -311,19 +362,24 @@ export function HeroSection(props: HeroSectionProps) {
         </div>
       </div>
 
-      {/* FIXED CURVE */}
-      <div className="absolute bottom-0 left-0 right-0 z-0 overflow-hidden leading-none">
-        <svg
-          className="block w-full h-[50px] sm:h-[65px] md:h-[80px]"
-          viewBox="0 0 1440 80"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z"
-            fill="white"
-          />
-        </svg>
-      </div>
+      {/* ================================================= */}
+      {/* CURVE — hanya tampil jika showCurve = true */}
+      {/* ================================================= */}
+      {showCurve && (
+        <div className="absolute bottom-0 left-0 right-0 z-0 overflow-hidden leading-none">
+          <svg
+            className="block w-full h-[50px] sm:h-[65px] md:h-[80px]"
+            viewBox="0 0 1440 80"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,0 C480,80 960,80 1440,0 L1440,80 L0,80 Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+      )}
+
     </section>
   );
 }

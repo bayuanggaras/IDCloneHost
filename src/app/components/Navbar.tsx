@@ -53,6 +53,14 @@ const solutionCategories = [
   },
 ];
 
+// Data Kategori Program (Tambahan agar panah Program ada isinya di mobile)
+const programCategories = [
+  {
+    title: "Partner & Affiliates",
+    items: ["Affiliate Program", "Reseller Program", "Partner Network"],
+  },
+];
+
 // =========================================================
 // KOMPONEN NAVBAR
 // =========================================================
@@ -62,6 +70,7 @@ export function Navbar() {
   // State untuk Desktop Mega Menu
   const [showProductMenu, setShowProductMenu] = useState(false);
   const [showSolutionMenu, setShowSolutionMenu] = useState(false);
+  const [showProgramMenu, setShowProgramMenu] = useState(false); // State baru untuk Program
 
   // State untuk Mobile Menu (Level 1: Tab Utama)
   const [mobileOpenTab, setMobileOpenTab] = useState<string | null>(null);
@@ -77,6 +86,7 @@ export function Navbar() {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
         setShowProductMenu(false);
         setShowSolutionMenu(false);
+        setShowProgramMenu(false);
       }
     };
 
@@ -89,16 +99,23 @@ export function Navbar() {
     if (link === "Produk") {
       setShowProductMenu((prev) => !prev);
       setShowSolutionMenu(false);
+      setShowProgramMenu(false);
     } else if (link === "Solusi") {
       setShowSolutionMenu((prev) => !prev);
       setShowProductMenu(false);
+      setShowProgramMenu(false);
+    } else if (link === "Program") {
+      setShowProgramMenu((prev) => !prev);
+      setShowProductMenu(false);
+      setShowSolutionMenu(false);
     } else {
       setShowProductMenu(false);
       setShowSolutionMenu(false);
+      setShowProgramMenu(false);
     }
   };
 
-  // Handler klik Mobile Level 1 (Produk / Solusi)
+  // Handler klik Mobile Level 1 (Produk / Solusi / Program)
   const handleMobileTabClick = (link: string) => {
     if (mobileOpenTab === link) {
       setMobileOpenTab(null);
@@ -109,7 +126,7 @@ export function Navbar() {
     }
   };
 
-  // Handler klik Mobile Level 2 (Kategori di dalam Produk / Solusi)
+  // Handler klik Mobile Level 2 (Kategori di dalam Produk / Solusi / Program)
   const handleMobileCategoryClick = (categoryTitle: string) => {
     if (mobileOpenCategory === categoryTitle) {
       setMobileOpenCategory(null);
@@ -136,7 +153,8 @@ export function Navbar() {
                 className="text-white/90 hover:text-white font-medium text-[15px] flex items-center gap-1 cursor-pointer"
               >
                 {link}
-                {(link === "Produk" || link === "Solusi") && (
+                {/* Menambahkan Program ke dalam kondisi panah */}
+                {(link === "Produk" || link === "Solusi" || link === "Program") && (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -149,7 +167,8 @@ export function Navbar() {
                     strokeLinejoin="round"
                     className={`transition-transform duration-300 ${
                       (link === "Produk" && showProductMenu) ||
-                      (link === "Solusi" && showSolutionMenu)
+                      (link === "Solusi" && showSolutionMenu) ||
+                      (link === "Program" && showProgramMenu)
                         ? "-rotate-180"
                         : ""
                     }`}
@@ -166,13 +185,22 @@ export function Navbar() {
               {link === "Solusi" && showSolutionMenu && (
                 <SolutionMegaMenu onMouseEnter={() => setShowSolutionMenu(true)} />
               )}
+              
+              {/* Tempat untuk ProgramMegaMenu jika suatu saat dibuat */}
+              {/* {link === "Program" && showProgramMenu && (
+                <ProgramMegaMenu onMouseEnter={() => setShowProgramMenu(true)} />
+              )} */}
             </div>
           ))}
         </div>
 
         {/* LOGIN DESKTOP */}
-        <a href="#" className="hidden lg:flex px-6 py-2.5 rounded-lg bg-white/20 hover:bg-white/30 transition-colors text-white font-bold cursor-pointer">
+        <a href="#" className="hidden lg:flex items-center gap-2 px-6 py-2.5 rounded-lg bg-white/20 border border-white/20 hover:bg-white/30 transition-colors text-white font-bold cursor-pointer">
           LOGIN
+          {/* Panah untuk tombol Login */}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
         </a>
 
         {/* TOMBOL HAMBURGER MOBILE */}
@@ -199,7 +227,7 @@ export function Navbar() {
             <div key={link} className="border-b border-white/10 last:border-b-0 flex flex-col">
 
               {/* LEVEL 1: TOMBOL MENU UTAMA */}
-              {link === "Produk" || link === "Solusi" ? (
+              {link === "Produk" || link === "Solusi" || link === "Program" ? (
                 <button
                   onClick={() => handleMobileTabClick(link)}
                   className="py-4 text-white font-medium flex justify-between items-center w-full text-left cursor-pointer focus:outline-none"
@@ -221,11 +249,11 @@ export function Navbar() {
               )}
 
               {/* LEVEL 2: ANIMASI DROPDOWN UNTUK KATEGORI */}
-              {(link === "Produk" || link === "Solusi") && (
+              {(link === "Produk" || link === "Solusi" || link === "Program") && (
                 <div className={`grid transition-all duration-300 ease-in-out ${mobileOpenTab === link ? "grid-rows-[1fr] opacity-100 mb-2" : "grid-rows-[0fr] opacity-0"}`}>
                   <div className="overflow-hidden">
 
-                    {(link === "Produk" ? productCategories : solutionCategories).map((category) => (
+                    {(link === "Produk" ? productCategories : link === "Solusi" ? solutionCategories : programCategories).map((category) => (
                       <div key={category.title} className="pl-3 ml-2 border-l border-white/20 mb-2 flex flex-col">
 
                         {/* TOMBOL KATEGORI */}
@@ -273,9 +301,13 @@ export function Navbar() {
 
           <a
             href="#"
-            className="mt-6 text-center px-6 py-3.5 rounded-xl bg-[#016dfc] text-white font-bold cursor-pointer"
+            className="mt-6 flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl bg-[#016dfc] text-white font-bold cursor-pointer"
           >
             LOGIN
+            {/* Panah untuk tombol Login Mobile */}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
           </a>
         </div>
       )}
