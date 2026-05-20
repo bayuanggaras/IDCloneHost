@@ -463,3 +463,117 @@ export function SolutionMegaMenu({ onMouseEnter, onMouseLeave }: MegaMenuProps) 
     </div>
   );
 }
+
+// ...existing code...
+
+// ============================================================
+// DATA PROGRAM
+// ============================================================
+const programIcon = (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2" />
+    <path d="M8 9h8M8 13h6M8 17h4" />
+  </svg>
+);
+
+const programData: ProductItem[] = [
+  { name: "Startup Accelerator", desc: "Program percepatan untuk startup digital Indonesia.", href: "/program/startup", icon: programIcon },
+  { name: "Cloud Academy", desc: "Pelatihan cloud dan teknologi terbaru untuk mahasiswa & profesional.", href: "/program/academy", icon: programIcon },
+  { name: "IDCH Community", desc: "Komunitas pengguna dan developer IDCloudHost.", href: "/program/community", icon: programIcon },
+  { name: "Tech Webinar", desc: "Webinar rutin seputar cloud, AI, dan teknologi digital.", href: "/program/webinar", icon: programIcon },
+  { name: "Hackathon", desc: "Kompetisi coding dan inovasi digital tahunan.", href: "/program/hackathon", icon: programIcon },
+  { name: "Scholarship", desc: "Beasiswa teknologi untuk pelajar dan mahasiswa.", href: "/program/scholarship", icon: programIcon },
+  { name: "Partner Program", desc: "Program kemitraan bisnis dan teknologi.", href: "/program/partner", icon: programIcon },
+  { name: "Ambassador", desc: "Jadilah duta IDCloudHost di komunitasmu.", href: "/program/ambassador", icon: programIcon },
+];
+
+// ============================================================
+// KOMPONEN: PROGRAM MEGA MENU
+// Tanpa sidebar/tab, langsung tampil 8 card
+// ============================================================
+export function ProgramMegaMenu({ onMouseEnter, onMouseLeave }: MegaMenuProps) {
+  return (
+    <div
+      className="fixed left-1/2 -translate-x-1/2 pt-2 z-[101]"
+      style={{ top: "64px", width: "min(1200px, 95vw)" }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      <div className="bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col text-slate-800">
+        <div className="flex-1 p-8 bg-white">
+          <h3 className="text-xl font-bold mb-6 text-slate-800">Program</h3>
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300"
+          >
+            {programData.map((item, i) => (
+              <ProductCard key={i} product={item} />
+            ))}
+          </div>
+        </div>
+        <MenuFooter />
+      </div>
+    </div>
+  );
+}// ...existing code...
+
+const loginMenuData: ProductItem[] = [
+  {
+    name: "Console Platform",
+    desc: "Akses ke IDCloudHost Console.",
+    href: "/console",
+    icon: (
+      <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <path d="M8 9l3 3-3 3" />
+        <path d="M13 15h3" />
+      </svg>
+    ),
+  },
+  {
+    name: "Client Area",
+    desc: "Kelola layanan dan tagihan Anda.",
+    href: "/clientarea",
+    icon: (
+      <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+      </svg>
+    ),
+  },
+];
+
+export function LoginMegaMenu({ onMouseEnter, onMouseLeave }: MegaMenuProps) {
+  return (
+    <div
+      className="absolute right-0 mt-2 z-[101]"
+      style={{ width: "min(220px, 95vw)" }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      <div className="bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col text-slate-800">
+        <div className="p-3 bg-white">
+          <h3 className="text-base font-bold mb-2 text-slate-800">Login</h3>
+          <div className="grid grid-cols-1 gap-2">
+            {loginMenuData.map((item, i) => (
+              <div
+                key={i}
+                onClick={() => item.href && window.location.assign(item.href)}
+                className="flex items-center gap-3 p-2 rounded-lg border border-slate-200 hover:bg-[#016dfc]/10 cursor-pointer transition-all"
+              >
+                <div className="w-7 h-7 flex items-center justify-center text-[#016dfc]">{item.icon}</div>
+                <div>
+                  <div className="text-sm text-slate-800">{item.name}</div>
+                  {/* Deskripsi dihapus */}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+// ...existing code...
+

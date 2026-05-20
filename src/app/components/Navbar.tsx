@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ProductMegaMenu, SolutionMegaMenu } from "./AllMegaMenu";
+import { ProductMegaMenu, SolutionMegaMenu, ProgramMegaMenu, LoginMegaMenu } from "./AllMegaMenu";
 import logoSvg from "../../assets/IDCloudHost.svg";
 
 // =========================================================
@@ -70,7 +70,8 @@ export function Navbar() {
   // State untuk Desktop Mega Menu
   const [showProductMenu, setShowProductMenu] = useState(false);
   const [showSolutionMenu, setShowSolutionMenu] = useState(false);
-  const [showProgramMenu, setShowProgramMenu] = useState(false); // State baru untuk Program
+  const [showProgramMenu, setShowProgramMenu] = useState(false);
+  const [showLoginMenu, setShowLoginMenu] = useState(false);
 
   // State untuk Mobile Menu (Level 1: Tab Utama)
   const [mobileOpenTab, setMobileOpenTab] = useState<string | null>(null);
@@ -87,6 +88,7 @@ export function Navbar() {
         setShowProductMenu(false);
         setShowSolutionMenu(false);
         setShowProgramMenu(false);
+        setShowLoginMenu(false);
       }
     };
 
@@ -100,19 +102,31 @@ export function Navbar() {
       setShowProductMenu((prev) => !prev);
       setShowSolutionMenu(false);
       setShowProgramMenu(false);
+      setShowLoginMenu(false);
     } else if (link === "Solusi") {
       setShowSolutionMenu((prev) => !prev);
       setShowProductMenu(false);
       setShowProgramMenu(false);
+      setShowLoginMenu(false);
     } else if (link === "Program") {
       setShowProgramMenu((prev) => !prev);
       setShowProductMenu(false);
       setShowSolutionMenu(false);
+      setShowLoginMenu(false);
     } else {
       setShowProductMenu(false);
       setShowSolutionMenu(false);
       setShowProgramMenu(false);
+      setShowLoginMenu(false);
     }
+  };
+
+  // Handler klik tombol Login Desktop
+  const handleLoginClick = () => {
+    setShowLoginMenu((prev) => !prev);
+    setShowProductMenu(false);
+    setShowSolutionMenu(false);
+    setShowProgramMenu(false);
   };
 
   // Handler klik Mobile Level 1 (Produk / Solusi / Program)
@@ -138,70 +152,79 @@ export function Navbar() {
   return (
     <nav className="absolute top-0 left-0 right-0 z-[100] px-5 md:px-10 lg:px-16 py-4 font-['Figtree']">
       <div ref={navRef} className="max-w-7xl mx-auto flex items-center justify-between relative">
-
         {/* LOGO */}
         <div className="flex items-center gap-2 shrink-0">
           <img src={logoSvg} alt="logo" className="h-12 w-auto object-contain" />
         </div>
 
-        {/* DESKTOP MENU */}
-        <div className="hidden lg:flex items-center gap-8 relative">
-          {navLinks.map((link) => (
-            <div key={link} className="relative py-4">
-              <button
-                onClick={() => handleDesktopClick(link)}
-                className="text-white/90 hover:text-white font-medium text-[15px] flex items-center gap-1 cursor-pointer"
-              >
-                {link}
-                {/* Menambahkan Program ke dalam kondisi panah */}
-                {(link === "Produk" || link === "Solusi" || link === "Program") && (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className={`transition-transform duration-300 ${
-                      (link === "Produk" && showProductMenu) ||
-                      (link === "Solusi" && showSolutionMenu) ||
-                      (link === "Program" && showProgramMenu)
-                        ? "-rotate-180"
-                        : ""
-                    }`}
-                  >
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                )}
-              </button>
+        {/* MENU TENGAH */}
+        <div className="flex-1 flex items-center justify-center">
+          <div className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <div key={link} className="relative py-4">
+                <button
+                  onClick={() => handleDesktopClick(link)}
+                  className="text-white/90 hover:text-white font-medium text-[15px] flex items-center gap-1 cursor-pointer"
+                >
+                  {link}
+                  {(link === "Produk" || link === "Solusi" || link === "Program") && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className={`transition-transform duration-300 ${
+                        (link === "Produk" && showProductMenu) ||
+                        (link === "Solusi" && showSolutionMenu) ||
+                        (link === "Program" && showProgramMenu)
+                          ? "-rotate-180"
+                          : ""
+                      }`}
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  )}
+                </button>
 
-              {link === "Produk" && showProductMenu && (
-                <ProductMegaMenu onMouseEnter={() => setShowProductMenu(true)} />
-              )}
-
-              {link === "Solusi" && showSolutionMenu && (
-                <SolutionMegaMenu onMouseEnter={() => setShowSolutionMenu(true)} />
-              )}
-              
-              {/* Tempat untuk ProgramMegaMenu jika suatu saat dibuat */}
-              {/* {link === "Program" && showProgramMenu && (
-                <ProgramMegaMenu onMouseEnter={() => setShowProgramMenu(true)} />
-              )} */}
-            </div>
-          ))}
+                {link === "Produk" && showProductMenu && <ProductMegaMenu />}
+                {link === "Solusi" && showSolutionMenu && <SolutionMegaMenu />}
+                {link === "Program" && showProgramMenu && <ProgramMegaMenu />}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* LOGIN DESKTOP */}
-        <a href="#" className="hidden lg:flex items-center gap-2 px-6 py-2.5 rounded-lg bg-white/20 border border-white/20 hover:bg-white/30 transition-colors text-white font-bold cursor-pointer">
-          LOGIN
-          {/* Panah untuk tombol Login */}
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="6 9 12 15 18 9" />
-          </svg>
-        </a>
+        <div className="relative hidden lg:block shrink-0">
+          <button
+            onClick={handleLoginClick}
+            className="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-white/20 border border-white/20 hover:bg-white/30 transition-colors text-white font-bold cursor-pointer"
+          >
+            LOGIN
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className={`transition-transform duration-300 ${
+                showLoginMenu ? "-rotate-180" : ""
+              }`}
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          {showLoginMenu && <LoginMegaMenu />}
+        </div>
 
         {/* TOMBOL HAMBURGER MOBILE */}
         <button
@@ -214,7 +237,6 @@ export function Navbar() {
             <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </span>
         </button>
-
       </div>
 
       {/* ========================================= */}
@@ -299,16 +321,16 @@ export function Navbar() {
             </div>
           ))}
 
-          <a
-            href="#"
+          <button
             className="mt-6 flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl bg-[#016dfc] text-white font-bold cursor-pointer"
+            onClick={() => setShowLoginMenu((prev) => !prev)}
           >
             LOGIN
-            {/* Panah untuk tombol Login Mobile */}
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="6 9 12 15 18 9" />
             </svg>
-          </a>
+          </button>
+          {showLoginMenu && <LoginMegaMenu />}
         </div>
       )}
     </nav>
