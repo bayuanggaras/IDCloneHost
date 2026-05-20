@@ -211,7 +211,7 @@ const allProducts = {
 // ============================================================
 // STRUKTUR MENU PRODUK
 // ============================================================
-const productData: Record<string, ProductItem[]> = {
+export const productData: Record<string, ProductItem[]> = {
   "Featured Products": [
     allProducts.cloudVps,
     allProducts.serverVps,
@@ -268,7 +268,7 @@ const solutionIconApps = (
   </svg>
 );
 
-const solutionData: Record<string, ProductItem[]> = {
+export const solutionData: Record<string, ProductItem[]> = {
   "Solution by Industry": [
     { name: "Education",                   desc: "Menyediakan teknologi terbaru untuk mendukung pembelajaran digital yang efektif dan inovatif.",              href: "/cloud-solution", icon: solutionIconCloud },
     { name: "Finance",                     desc: "Mengelola finansial company Anda dengan solusi layanan yang aman dan terpercaya.",                           href: "/cloud-solution", icon: solutionIconCloud },
@@ -478,15 +478,14 @@ const programIcon = (
   </svg>
 );
 
-const programData: ProductItem[] = [
-  { name: "Startup Accelerator", desc: "Program percepatan untuk startup digital Indonesia.", href: "/program/startup", icon: programIcon },
-  { name: "Cloud Academy", desc: "Pelatihan cloud dan teknologi terbaru untuk mahasiswa & profesional.", href: "/program/academy", icon: programIcon },
-  { name: "IDCH Community", desc: "Komunitas pengguna dan developer IDCloudHost.", href: "/program/community", icon: programIcon },
-  { name: "Tech Webinar", desc: "Webinar rutin seputar cloud, AI, dan teknologi digital.", href: "/program/webinar", icon: programIcon },
-  { name: "Hackathon", desc: "Kompetisi coding dan inovasi digital tahunan.", href: "/program/hackathon", icon: programIcon },
-  { name: "Scholarship", desc: "Beasiswa teknologi untuk pelajar dan mahasiswa.", href: "/program/scholarship", icon: programIcon },
-  { name: "Partner Program", desc: "Program kemitraan bisnis dan teknologi.", href: "/program/partner", icon: programIcon },
-  { name: "Ambassador", desc: "Jadilah duta IDCloudHost di komunitasmu.", href: "/program/ambassador", icon: programIcon },
+export const programData: ProductItem[] = [
+  { name: "Beasiswa", desc: "Program percepatan untuk startup digital Indonesia.", href: "/program/startup", icon: programIcon },
+  { name: "Affiliates", desc: "Pelatihan cloud dan teknologi terbaru untuk mahasiswa & profesional.", href: "/program/academy", icon: programIcon },
+  { name: "Event & Program", desc: "Komunitas pengguna dan developer IDCloudHost.", href: "/program/community", icon: programIcon },
+  { name: "Partnership", desc: "Webinar rutin seputar cloud, AI, dan teknologi digital.", href: "/program/webinar", icon: programIcon },
+  { name: "Program Ekabima", desc: "Kompetisi coding dan inovasi digital tahunan.", href: "/program/hackathon", icon: programIcon },
+  { name: "Program NGO Go Digital", desc: "Beasiswa teknologi untuk pelajar dan mahasiswa.", href: "/program/scholarship", icon: programIcon },
+  { name: "Program Domain Gratis", desc: "Program kemitraan bisnis dan teknologi.", href: "/program/partner", icon: programIcon },
 ];
 
 // ============================================================
@@ -516,7 +515,7 @@ export function ProgramMegaMenu({ onMouseEnter, onMouseLeave }: MegaMenuProps) {
       </div>
     </div>
   );
-}// ...existing code...
+}
 
 const loginMenuData: ProductItem[] = [
   {

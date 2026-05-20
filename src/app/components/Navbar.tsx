@@ -1,87 +1,53 @@
 import { useEffect, useRef, useState } from "react";
-import { ProductMegaMenu, SolutionMegaMenu, ProgramMegaMenu, LoginMegaMenu } from "./AllMegaMenu";
+import { 
+  ProductMegaMenu, SolutionMegaMenu, ProgramMegaMenu, LoginMegaMenu,
+  productData, solutionData, programData 
+} from "./AllMegaMenu";
+import { Link } from "react-router-dom";
 import logoSvg from "../../assets/IDCloudHost.svg";
 
-// =========================================================
-// DATA UTAMA & STRUKTUR MENU MOBILE (DIAMBIL DARI DESKTOP)
-// =========================================================
 const navLinks = ["Produk", "Harga", "Solusi", "Program", "Bantuan", "Promo"];
 
-// Data Kategori Produk
-const productCategories = [
+const mobileItemClass = "text-white/60 hover:text-white text-[13px] transition-colors";
+
+// Data Login Mobile (diambil dari data yang sama dengan AllMegaMenu)
+const loginMenuData = [
   {
-    title: "Featured Products",
-    items: [
-      "Cloud VPS", "Server VPS", "Colocation Server",
-      "WordPress Hosting", "Dedicated Server", "VPS WHM cPanel"
-    ],
+    name: "Console Platform",
+    href: "/console",
+    icon: (
+      <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <path d="M8 9l3 3-3 3" />
+        <path d="M13 15h3" />
+      </svg>
+    ),
   },
   {
-    title: "Cloud & Server",
-    items: [
-      "Cloud VPS", "Server VPS", "Colocation Server", "Bare Metal Server",
-      "Private Cloud", "GPU Server", "Dedicated Server", "VPS WHM cPanel"
-    ],
-  },
-  {
-    title: "Domain & Website",
-    items: ["Domain .ID", "SSL Certificate", "Website Instant", "WordPress Hosting"],
-  },
-  {
-    title: "Developer Tools",
-    items: ["Object Storage", "Kubernetes"],
-  },
-  {
-    title: "Solution & Addons",
-    items: ["Email Solution", "Backup Solution"],
+    name: "Client Area",
+    href: "/clientarea",
+    icon: (
+      <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+      </svg>
+    ),
   },
 ];
 
-// Data Kategori Solusi
-const solutionCategories = [
-  {
-    title: "Solution by Industry",
-    items: [
-      "Education", "Finance", "Retail", "Tour & Travel",
-      "e-Commerce", "Manufacturing & Distribution",
-      "Medical & Healthcare", "Media", "Government"
-    ],
-  },
-  {
-    title: "Solution by Apps",
-    items: ["OpenClaw", "Paperclip", "N8n"],
-  },
-];
-
-// Data Kategori Program (Tambahan agar panah Program ada isinya di mobile)
-const programCategories = [
-  {
-    title: "Partner & Affiliates",
-    items: ["Affiliate Program", "Reseller Program", "Partner Network"],
-  },
-];
-
-// =========================================================
-// KOMPONEN NAVBAR
-// =========================================================
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  // State untuk Desktop Mega Menu
   const [showProductMenu, setShowProductMenu] = useState(false);
   const [showSolutionMenu, setShowSolutionMenu] = useState(false);
   const [showProgramMenu, setShowProgramMenu] = useState(false);
   const [showLoginMenu, setShowLoginMenu] = useState(false);
+  const [showMobileLoginMenu, setShowMobileLoginMenu] = useState(false); // State baru khusus mobile
 
-  // State untuk Mobile Menu (Level 1: Tab Utama)
   const [mobileOpenTab, setMobileOpenTab] = useState<string | null>(null);
-
-  // State untuk Mobile Menu (Level 2: Sub Kategori)
   const [mobileOpenCategory, setMobileOpenCategory] = useState<string | null>(null);
 
   const navRef = useRef<HTMLDivElement | null>(null);
 
-  // Klik di luar untuk menutup menu Desktop
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
@@ -91,12 +57,10 @@ export function Navbar() {
         setShowLoginMenu(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Handler klik Desktop
   const handleDesktopClick = (link: string) => {
     if (link === "Produk") {
       setShowProductMenu((prev) => !prev);
@@ -121,7 +85,6 @@ export function Navbar() {
     }
   };
 
-  // Handler klik tombol Login Desktop
   const handleLoginClick = () => {
     setShowLoginMenu((prev) => !prev);
     setShowProductMenu(false);
@@ -129,7 +92,15 @@ export function Navbar() {
     setShowProgramMenu(false);
   };
 
-  // Handler klik Mobile Level 1 (Produk / Solusi / Program)
+  const toggleMobileMenu = () => {
+    setMenuOpen(!menuOpen);
+    if (menuOpen) {
+      setMobileOpenTab(null);
+      setMobileOpenCategory(null);
+      setShowMobileLoginMenu(false); // Reset menu login mobile
+    }
+  };
+
   const handleMobileTabClick = (link: string) => {
     if (mobileOpenTab === link) {
       setMobileOpenTab(null);
@@ -140,7 +111,6 @@ export function Navbar() {
     }
   };
 
-  // Handler klik Mobile Level 2 (Kategori di dalam Produk / Solusi / Program)
   const handleMobileCategoryClick = (categoryTitle: string) => {
     if (mobileOpenCategory === categoryTitle) {
       setMobileOpenCategory(null);
@@ -152,13 +122,16 @@ export function Navbar() {
   return (
     <nav className="absolute top-0 left-0 right-0 z-[100] px-5 md:px-10 lg:px-16 py-4 font-['Figtree']">
       <div ref={navRef} className="max-w-7xl mx-auto flex items-center justify-between relative">
+
         {/* LOGO */}
         <div className="flex items-center gap-2 shrink-0">
-          <img src={logoSvg} alt="logo" className="h-12 w-auto object-contain" />
+          <Link to="/" className="flex items-center gap-2 shrink-0 cursor-pointer">
+            <img src={logoSvg} alt="logo" className="h-12 w-auto object-contain" />
+          </Link>
         </div>
 
-        {/* MENU TENGAH */}
-        <div className="flex-1 flex items-center justify-center">
+        {/* MENU TENGAH - HANYA DESKTOP */}
+        <div className="flex-1 hidden lg:flex items-center justify-center">
           <div className="flex items-center gap-8">
             {navLinks.map((link) => (
               <div key={link} className="relative py-4">
@@ -190,7 +163,6 @@ export function Navbar() {
                     </svg>
                   )}
                 </button>
-
                 {link === "Produk" && showProductMenu && <ProductMegaMenu />}
                 {link === "Solusi" && showSolutionMenu && <SolutionMegaMenu />}
                 {link === "Program" && showProgramMenu && <ProgramMegaMenu />}
@@ -216,9 +188,7 @@ export function Navbar() {
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className={`transition-transform duration-300 ${
-                showLoginMenu ? "-rotate-180" : ""
-              }`}
+              className={`transition-transform duration-300 ${showLoginMenu ? "-rotate-180" : ""}`}
             >
               <polyline points="6 9 12 15 18 9" />
             </svg>
@@ -228,7 +198,7 @@ export function Navbar() {
 
         {/* TOMBOL HAMBURGER MOBILE */}
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={toggleMobileMenu}
           className="lg:hidden text-white p-2 cursor-pointer focus:outline-none"
         >
           <span className="flex flex-col gap-1.5">
@@ -239,12 +209,9 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* ========================================= */}
       {/* MOBILE MENU */}
-      {/* ========================================= */}
       {menuOpen && (
         <div className="lg:hidden absolute top-[80px] left-5 right-5 bg-[#0b2149]/95 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-2xl z-[100] flex flex-col max-h-[80vh] overflow-y-auto">
-
           {navLinks.map((link) => (
             <div key={link} className="border-b border-white/10 last:border-b-0 flex flex-col">
 
@@ -257,9 +224,7 @@ export function Navbar() {
                   {link}
                   <svg
                     width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                    className={`transition-transform duration-300 opacity-60 ${
-                      mobileOpenTab === link ? "-rotate-180 text-[#016dfc]" : "rotate-0"
-                    }`}
+                    className={`transition-transform duration-300 opacity-60 ${mobileOpenTab === link ? "-rotate-180 text-[#016dfc]" : "rotate-0"}`}
                   >
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
@@ -270,49 +235,55 @@ export function Navbar() {
                 </a>
               )}
 
-              {/* LEVEL 2: ANIMASI DROPDOWN UNTUK KATEGORI */}
+              {/* LEVEL 2: DROPDOWN */}
               {(link === "Produk" || link === "Solusi" || link === "Program") && (
                 <div className={`grid transition-all duration-300 ease-in-out ${mobileOpenTab === link ? "grid-rows-[1fr] opacity-100 mb-2" : "grid-rows-[0fr] opacity-0"}`}>
                   <div className="overflow-hidden">
 
-                    {(link === "Produk" ? productCategories : link === "Solusi" ? solutionCategories : programCategories).map((category) => (
-                      <div key={category.title} className="pl-3 ml-2 border-l border-white/20 mb-2 flex flex-col">
+                    {/* MAPPING DATA: PROGRAM */}
+                    {link === "Program" ? (
+                      <div className="flex flex-col gap-3 pl-5 py-2 border-l border-white/20 ml-2">
+                        {programData.map((item) => (
+                          <a key={item.name} href={item.href || "#"} className={mobileItemClass}>
+                            {item.name}
+                          </a>
+                        ))}
+                      </div>
+                    ) : (
+                      /* MAPPING DATA: PRODUK & SOLUSI */
+                      Object.entries(link === "Produk" ? productData : solutionData).map(([categoryTitle, items]) => (
+                        <div key={categoryTitle} className="pl-3 ml-2 border-l border-white/20 mb-2 flex flex-col">
 
-                        {/* TOMBOL KATEGORI */}
-                        <button
-                          onClick={() => handleMobileCategoryClick(category.title)}
-                          className="py-2.5 text-white/90 text-[14.5px] font-medium flex justify-between items-center w-full text-left cursor-pointer"
-                        >
-                          {category.title}
-                          <svg
-                            width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                            className={`transition-transform duration-300 opacity-50 ${
-                              mobileOpenCategory === category.title ? "-rotate-180 text-white" : "rotate-0"
-                            }`}
+                          {/* TOMBOL KATEGORI */}
+                          <button
+                            onClick={() => handleMobileCategoryClick(categoryTitle)}
+                            className="py-2.5 text-white/90 text-[14.5px] font-medium flex justify-between items-center w-full text-left cursor-pointer"
                           >
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                          </svg>
-                        </button>
+                            {categoryTitle}
+                            <svg
+                              width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                              className={`transition-transform duration-300 opacity-50 ${mobileOpenCategory === categoryTitle ? "-rotate-180 text-white" : "rotate-0"}`}
+                            >
+                              <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                          </button>
 
-                        {/* LEVEL 3: ANIMASI DROPDOWN UNTUK ITEM FINAL */}
-                        <div className={`grid transition-all duration-300 ease-in-out ${mobileOpenCategory === category.title ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-                          <div className="overflow-hidden">
-                            <div className="flex flex-col gap-3 pl-3 py-2">
-                              {category.items.map((item) => (
-                                <a
-                                  key={item}
-                                  href="#"
-                                  className="text-white/60 hover:text-white text-[13px] transition-colors relative before:content-[''] before:absolute before:-left-3 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-1 before:bg-white/30 before:rounded-full"
-                                >
-                                  {item}
-                                </a>
-                              ))}
+                          {/* LEVEL 3: ITEM FINAL DARI ASLI DATA */}
+                          <div className={`grid transition-all duration-300 ease-in-out ${mobileOpenCategory === categoryTitle ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                            <div className="overflow-hidden">
+                              <div className="flex flex-col gap-3 pl-3 py-2">
+                                {items.map((item) => (
+                                  <a key={item.name} href={item.href || "#"} className={mobileItemClass}>
+                                    {item.name}
+                                  </a>
+                                ))}
+                              </div>
                             </div>
                           </div>
-                        </div>
 
-                      </div>
-                    ))}
+                        </div>
+                      ))
+                    )}
 
                   </div>
                 </div>
@@ -321,16 +292,44 @@ export function Navbar() {
             </div>
           ))}
 
-          <button
-            className="mt-6 flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl bg-[#016dfc] text-white font-bold cursor-pointer"
-            onClick={() => setShowLoginMenu((prev) => !prev)}
-          >
-            LOGIN
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          {showLoginMenu && <LoginMegaMenu />}
+          {/* LOGIN MOBILE */}
+          <div className="flex flex-col mt-6">
+            <button
+              className="flex justify-center items-center gap-2 px-6 py-3.5 rounded-xl bg-[#016dfc] text-white font-bold cursor-pointer w-full"
+              onClick={() => setShowMobileLoginMenu((prev) => !prev)}
+            >
+              LOGIN
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                className={`transition-transform duration-300 ${showMobileLoginMenu ? "-rotate-180" : ""}`}
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+
+            {/* DROPDOWN LOGIN MOBILE INLINE */}
+            <div className={`grid transition-all duration-300 ease-in-out ${showMobileLoginMenu ? "grid-rows-[1fr] opacity-100 mt-3" : "grid-rows-[0fr] opacity-0"}`}>
+              <div className="overflow-hidden">
+                <div className="flex flex-col gap-2 p-3 bg-white/5 rounded-xl border border-white/10">
+                  {loginMenuData.map((item, i) => (
+                    <a
+                      key={i}
+                      href={item.href}
+                      className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 transition-colors text-white"
+                    >
+                      <div className="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full text-[#016dfc]">
+                        {item.icon}
+                      </div>
+                      <div className="flex-1">
+                        <div className="text-[14px] font-semibold">{item.name}</div>
+                        <div className="text-[12px] text-white/60">{item.desc}</div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          
         </div>
       )}
     </nav>

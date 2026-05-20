@@ -49,7 +49,7 @@ const defaultProps: Required<HeroSectionV2Props> = {
     value: "Cloud VPS",
   },
 
-  title: "AI Agent pribadi yang aktif\n24/7 di server Anda", // [DIPERBARUI] Menyesuaikan sentence case
+  title: "AI Agent pribadi yang aktif\n24/7 di server Anda", 
 
   titleClassName: "text-4xl sm:text-5xl lg:text-[56px]",
 
@@ -64,8 +64,8 @@ const defaultProps: Required<HeroSectionV2Props> = {
   ],
 
   buttons: [
-    { label: "Lihat panduan", variant: "ghost" }, // [DIPERBARUI] Menyesuaikan sentence case
-    { label: "Mulai sekarang", variant: "primary" }, // [DIPERBARUI] Menyesuaikan sentence case
+    { label: "Lihat panduan", variant: "ghost" }, 
+    { label: "Mulai sekarang", variant: "primary" }, 
   ],
 
   background: null,
@@ -188,7 +188,7 @@ function HeroButtons({ buttons }: { buttons: HeroButton[] }) {
           <button
             key={btn.label}
             onClick={btn.onClick}
-            className="px-8 py-3.5 rounded-xl font-bold text-white bg-[#016dfc] hover:bg-[#0058d0] hover:-translate-y-0.5 transition-all shadow-lg shadow-[#016dfc]/30 cursor-pointer font-['Figtree']"
+            className="px-8 py-3.5 rounded-xl font-bold text-white bg-[#016dfc] hover:bg-[#0058d0] transition-all shadow-lg shadow-[#016dfc]/30 cursor-pointer font-['Figtree']"
           >
             {btn.label}
           </button>
@@ -238,16 +238,6 @@ export function HeroSectionV2(props: HeroSectionV2Props) {
           }}
         />
       )}
-
-      {/* Subtle grid texture */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
 
       <Navbar />
 
