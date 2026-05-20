@@ -282,7 +282,7 @@ const solutionData: Record<string, ProductItem[]> = {
   ],
   "Solution by Apps": [
     { name: "OpenClaw",  desc: "AI Agent Pribadi yang Aktif 24/7 di Server Anda.",                                              badge: "HOT", href: "/backup-solution", icon: solutionIconApps },
-    { name: "Paperclip", desc: "Paperclip memudahkan Anda mengatur dan mengelola pekerjaan dalam satu sistem.",                              href: "/backup-solution", icon: solutionIconApps },
+    { name: "Paperclip", desc: "Paperclip memudahkan Anda mengatur dan mengelola pekerjaan dalam satu sistem.",                               href: "/paperclip", icon: solutionIconApps },
     { name: "N8n",       desc: "Self Hosted n8n terbaik untuk otomasi & AI workflow bisnis Anda.",                                           href: "/backup-solution", icon: solutionIconApps },
   ],
 };
