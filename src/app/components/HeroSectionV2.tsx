@@ -98,7 +98,7 @@ function HeroBadge({
           </span>
         )}
         {label && <span className="text-white">{label}</span>}
-        {label && value && <span className="text-white/40">:</span>}
+        {label && value && <span className="text-white/40">|</span>}
         {value && <span className="text-white/70">{value}</span>}
         
       </div>
@@ -267,7 +267,7 @@ export function HeroSectionV2(props: HeroSectionV2Props) {
           </h1>
 
           {/* DESCRIPTION */}
-          <p className="text-base sm:text-lg text-white/60 leading-relaxed mb-10 max-w-2xl font-normal">
+          <p className="text-base sm:text-lg text-white/70 leading-relaxed mb-10 max-w-2xl font-normal">
             {subtitle}
           </p>
 

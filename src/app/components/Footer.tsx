@@ -360,7 +360,7 @@ export function Footer({
         {/* PAYMENT METHODS */}
         {/* ============================================================ */}
 
-        <div className="pt-6 mb-4">
+        <div className="pt-6 mb-4 hidden">
 
           <p
             style={{

@@ -205,6 +205,7 @@ function ConfiguratorCard() {
             onChange={(e) => setStorage(Number(e.target.value))}
             className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#016dfc]"
           />
+          
         </div>
       </div>
 
@@ -236,6 +237,10 @@ function ConfiguratorCard() {
           Deploy now
         </button>
       </div>
+      <p className="text-base mb-6 text-slate-500">
+        Prosesor AMD terbaru dengan efisiensi multi threading tinggi untuk
+        skalabilitas dan pemrosesan yang lebih optimal.
+      </p>
     </div>
   );
 }
