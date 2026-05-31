@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { 
-  ProductMegaMenu, SolutionMegaMenu, ProgramMegaMenu, LoginMegaMenu,
-  productData, solutionData, programData 
+  ProductMegaMenu, SolutionMegaMenu, ProgramMegaMenu, HelpMegaMenu, LoginMegaMenu,
+  productData, solutionData, programData, helpData 
 } from "./AllMegaMenu";
 import { Link } from "react-router-dom";
 import logoSvg from "../../assets/IDCloudHost.svg";
@@ -14,6 +14,7 @@ const mobileItemClass = "text-white/60 hover:text-white text-[13px] transition-c
 const loginMenuData = [
   {
     name: "Console Platform",
+    desc: "Akses ke IDCloudHost Console.",
     href: "/console",
     icon: (
       <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -25,6 +26,7 @@ const loginMenuData = [
   },
   {
     name: "Client Area",
+    desc: "Kelola layanan dan tagihan Anda.",
     href: "/clientarea",
     icon: (
       <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -40,8 +42,11 @@ export function Navbar() {
   const [showProductMenu, setShowProductMenu] = useState(false);
   const [showSolutionMenu, setShowSolutionMenu] = useState(false);
   const [showProgramMenu, setShowProgramMenu] = useState(false);
+  const [showHelpMenu, setShowHelpMenu] = useState(false);
   const [showLoginMenu, setShowLoginMenu] = useState(false);
+  const [showLangMenu, setShowLangMenu] = useState(false);
   const [showMobileLoginMenu, setShowMobileLoginMenu] = useState(false); // State baru khusus mobile
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const [mobileOpenTab, setMobileOpenTab] = useState<string | null>(null);
   const [mobileOpenCategory, setMobileOpenCategory] = useState<string | null>(null);
@@ -54,11 +59,22 @@ export function Navbar() {
         setShowProductMenu(false);
         setShowSolutionMenu(false);
         setShowProgramMenu(false);
+        setShowHelpMenu(false);
         setShowLoginMenu(false);
+        setShowLangMenu(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    handleScroll(); // Cek posisi awal saat mount
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleDesktopClick = (link: string) => {
@@ -66,22 +82,37 @@ export function Navbar() {
       setShowProductMenu((prev) => !prev);
       setShowSolutionMenu(false);
       setShowProgramMenu(false);
+      setShowHelpMenu(false);
       setShowLoginMenu(false);
+      setShowLangMenu(false);
     } else if (link === "Solusi") {
       setShowSolutionMenu((prev) => !prev);
       setShowProductMenu(false);
       setShowProgramMenu(false);
+      setShowHelpMenu(false);
       setShowLoginMenu(false);
+      setShowLangMenu(false);
     } else if (link === "Program") {
       setShowProgramMenu((prev) => !prev);
       setShowProductMenu(false);
       setShowSolutionMenu(false);
+      setShowHelpMenu(false);
       setShowLoginMenu(false);
-    } else {
+      setShowLangMenu(false);
+    } else if (link === "Bantuan") {
+      setShowHelpMenu((prev) => !prev);
       setShowProductMenu(false);
       setShowSolutionMenu(false);
       setShowProgramMenu(false);
       setShowLoginMenu(false);
+      setShowLangMenu(false);
+    } else {
+      setShowProductMenu(false);
+      setShowSolutionMenu(false);
+      setShowProgramMenu(false);
+      setShowHelpMenu(false);
+      setShowLoginMenu(false);
+      setShowLangMenu(false);
     }
   };
 
@@ -90,7 +121,18 @@ export function Navbar() {
     setShowProductMenu(false);
     setShowSolutionMenu(false);
     setShowProgramMenu(false);
+    setShowHelpMenu(false);
+    setShowLangMenu(false);
   };
+
+  const handleLangClick = () => {
+    setShowLangMenu((prev) => !prev);
+    setShowProductMenu(false);
+    setShowSolutionMenu(false);
+    setShowProgramMenu(false);
+    setShowHelpMenu(false);
+    setShowLoginMenu(false);
+  }
 
   const toggleMobileMenu = () => {
     setMenuOpen(!menuOpen);
@@ -120,7 +162,13 @@ export function Navbar() {
   };
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-[100] px-5 md:px-10 lg:px-16 py-4 font-['Figtree']">
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-[100] px-5 md:px-10 lg:px-16 transition-all duration-300 font-['Figtree'] ${
+        isScrolled 
+          ? "py-3 bg-[#020617]/80 backdrop-blur-md border-b border-white/10 shadow-lg" 
+          : "py-4 bg-transparent"
+      }`}
+    >
       <div ref={navRef} className="max-w-7xl mx-auto flex items-center justify-between relative">
 
         {/* LOGO */}
@@ -140,7 +188,7 @@ export function Navbar() {
                   className="text-white/90 hover:text-white font-medium text-[15px] flex items-center gap-1 cursor-pointer"
                 >
                   {link}
-                  {(link === "Produk" || link === "Solusi" || link === "Program") && (
+                  {(link === "Produk" || link === "Solusi" || link === "Program" || link === "Bantuan") && (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -154,7 +202,8 @@ export function Navbar() {
                       className={`transition-transform duration-300 ${
                         (link === "Produk" && showProductMenu) ||
                         (link === "Solusi" && showSolutionMenu) ||
-                        (link === "Program" && showProgramMenu)
+                        (link === "Program" && showProgramMenu) ||
+                        (link === "Bantuan" && showHelpMenu)
                           ? "-rotate-180"
                           : ""
                       }`}
@@ -166,35 +215,81 @@ export function Navbar() {
                 {link === "Produk" && showProductMenu && <ProductMegaMenu />}
                 {link === "Solusi" && showSolutionMenu && <SolutionMegaMenu />}
                 {link === "Program" && showProgramMenu && <ProgramMegaMenu />}
+                {link === "Bantuan" && showHelpMenu && <HelpMegaMenu />}
               </div>
             ))}
           </div>
         </div>
 
-        {/* LOGIN DESKTOP */}
-        <div className="relative hidden lg:block shrink-0">
-          <button
-            onClick={handleLoginClick}
-            className="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-white/20 border border-white/20 hover:bg-white/30 transition-colors text-white font-bold cursor-pointer"
-          >
-            LOGIN
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={`transition-transform duration-300 ${showLoginMenu ? "-rotate-180" : ""}`}
+        {/* LANGUAGE & LOGIN DESKTOP */}
+        <div className="hidden lg:flex items-center gap-4 shrink-0">
+          {/* LANGUAGE SELECTOR */}
+          <div className="relative">
+            <button
+              onClick={handleLangClick}
+              className="flex items-center gap-1.5 px-2 py-2.5 text-white/90 hover:text-white transition-colors font-medium cursor-pointer"
             >
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          {showLoginMenu && <LoginMegaMenu />}
+              <span className="text-lg">🇮🇩</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className={`transition-transform duration-300 ${showLangMenu ? "-rotate-180" : ""}`}
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+
+            {showLangMenu && (
+              <div className="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-2xl overflow-hidden py-1 z-[101]">
+                <button className="w-full flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors text-left cursor-pointer">
+                  <span className="text-lg">🇮🇩</span>
+                  <span className="text-sm font-semibold text-slate-800">Indonesia</span>
+                </button>
+                <button className="w-full flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors text-left cursor-pointer">
+                  <span className="text-lg">🇺🇸</span>
+                  <span className="text-sm font-semibold text-slate-800">English</span>
+                </button>
+                <button className="w-full flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors text-left cursor-pointer">
+                  <span className="text-lg">🇯🇵</span>
+                  <span className="text-sm font-semibold text-slate-800">Japanese</span>
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* LOGIN BUTTON */}
+          <div className="relative">
+            <button
+              onClick={handleLoginClick}
+              className="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-white/20 border border-white/20 hover:bg-white/30 transition-colors text-white font-bold cursor-pointer"
+            >
+              LOGIN
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className={`transition-transform duration-300 ${showLoginMenu ? "-rotate-180" : ""}`}
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            {showLoginMenu && <LoginMegaMenu />}
+          </div>
         </div>
+
 
         {/* TOMBOL HAMBURGER MOBILE */}
         <button
@@ -216,7 +311,7 @@ export function Navbar() {
             <div key={link} className="border-b border-white/10 last:border-b-0 flex flex-col">
 
               {/* LEVEL 1: TOMBOL MENU UTAMA */}
-              {link === "Produk" || link === "Solusi" || link === "Program" ? (
+              {link === "Produk" || link === "Solusi" || link === "Program" || link === "Bantuan" ? (
                 <button
                   onClick={() => handleMobileTabClick(link)}
                   className="py-4 text-white font-medium flex justify-between items-center w-full text-left cursor-pointer focus:outline-none"
@@ -236,7 +331,7 @@ export function Navbar() {
               )}
 
               {/* LEVEL 2: DROPDOWN */}
-              {(link === "Produk" || link === "Solusi" || link === "Program") && (
+              {(link === "Produk" || link === "Solusi" || link === "Program" || link === "Bantuan") && (
                 <div className={`grid transition-all duration-300 ease-in-out ${mobileOpenTab === link ? "grid-rows-[1fr] opacity-100 mb-2" : "grid-rows-[0fr] opacity-0"}`}>
                   <div className="overflow-hidden">
 
@@ -244,6 +339,14 @@ export function Navbar() {
                     {link === "Program" ? (
                       <div className="flex flex-col gap-3 pl-5 py-2 border-l border-white/20 ml-2">
                         {programData.map((item) => (
+                          <a key={item.name} href={item.href || "#"} className={mobileItemClass}>
+                            {item.name}
+                          </a>
+                        ))}
+                      </div>
+                    ) : link === "Bantuan" ? (
+                      <div className="flex flex-col gap-3 pl-5 py-2 border-l border-white/20 ml-2">
+                        {helpData.map((item) => (
                           <a key={item.name} href={item.href || "#"} className={mobileItemClass}>
                             {item.name}
                           </a>

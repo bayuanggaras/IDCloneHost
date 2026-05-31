@@ -18,191 +18,313 @@ interface ProductItem {
 const allProducts = {
   cloudVps: {
     name: "Cloud VPS",
-    desc: "Layanan Full Cloud Access dan Scale Up You Grow yang pertama di Indonesia.",
+    desc: "Server cloud cepat & scalable.",
     badge: "HOT",
     href: "/cloud-vps",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
-      </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M4 13.8501H20C21.2426 13.8501 22.25 14.8575 22.25 16.1001V18.8999C22.25 20.1425 21.2426 21.1499 20 21.1499H4C2.75736 21.1499 1.75 20.1425 1.75 18.8999V16.1001C1.75 14.8575 2.75736 13.8501 4 13.8501Z" stroke="#016DFC" stroke-width="2"/>
+      <path d="M15.6282 10.9001H10.0177C9.16082 10.8999 8.32091 10.6728 7.5918 10.2442C6.86269 9.81554 6.2731 9.20229 5.88891 8.47294C5.50473 7.74359 5.34108 6.92687 5.41626 6.11404C5.49144 5.30122 5.80248 4.52431 6.31464 3.87014C6.82679 3.21597 7.51987 2.71031 8.31643 2.40966C9.113 2.10901 9.98166 2.02522 10.8254 2.16765C11.669 2.31008 12.4545 2.67311 13.094 3.21619C13.7335 3.75927 14.2019 4.461 14.4467 5.24296H15.6282C16.4159 5.24296 17.1714 5.54097 17.7285 6.07143C18.2855 6.60189 18.5984 7.32134 18.5984 8.07153C18.5984 8.82171 18.2855 9.54117 17.7285 10.0716C17.1714 10.6021 16.4159 10.9001 15.6282 10.9001Z" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M6 17H10" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+    </svg>
     ),
   },
   serverVps: {
     name: "Server VPS",
-    desc: "Layanan Server VPS Indonesia terjangkau & terbaik untuk Website & Aplikasi Bisnis Anda.",
+    desc: "VPS terjangkau untuk website bisnis.",
     badge: "NVMe",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="4" width="20" height="8" rx="2" ry="2" />
-        <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
-        <line x1="6" y1="8" x2="6.01" y2="8" />
-        <line x1="6" y1="18" x2="6.01" y2="18" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 13.8501H20C21.2426 13.8501 22.25 14.8575 22.25 16.1001V18.8999C22.25 20.1425 21.2426 21.1499 20 21.1499H4C2.75736 21.1499 1.75 20.1425 1.75 18.8999V16.1001C1.75 14.8575 2.75736 13.8501 4 13.8501Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M6 17H10" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+        <path d="M4 3.75H20C21.2426 3.75 22.25 4.75736 22.25 6V8.7998C22.25 10.0424 21.2426 11.0498 20 11.0498H4C2.75736 11.0498 1.75 10.0424 1.75 8.7998V6C1.75 4.75736 2.75736 3.75 4 3.75Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M6 6.8999H10" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
       </svg>
     ),
   },
   colocationServer: {
     name: "Colocation Server",
-    desc: "Kenyamanan layanan cloud yang berpadu dengan kontrol serta kinerja on premises server.",
+    desc: "Tempatkan server Anda di data center premium.",
     badge: "Tier IV",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-        <circle cx="12" cy="10" r="3" />
-      </svg>
+     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M4 3.75H20C21.2426 3.75 22.25 4.75736 22.25 6V11C22.25 12.2426 21.2426 13.25 20 13.25H4C2.75736 13.25 1.75 12.2426 1.75 11V6C1.75 4.75736 2.75736 3.75 4 3.75Z" stroke="#016DFC" stroke-width="2"/>
+      <path d="M12 14L12 21" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+      <path d="M19 21L5 21" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+      <path d="M6 6.8999H10" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+    </svg>
     ),
   },
   wordpressHosting: {
     name: "WordPress Hosting",
-    desc: "Solusi cadangan data yang aman dan fleksibel untuk melindungi bisnis Anda.",
+    desc: "Hosting khusus WordPress siap pakai.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M8 11.5c0 1.5 1 4.5 1 4.5s.5-1.5 1-3.5c.5 2 1 3.5 1 3.5s1-3 1-4.5" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 13.8501H20C21.2426 13.8501 22.25 14.8575 22.25 16.1001V18.8999C22.25 20.1425 21.2426 21.1499 20 21.1499H4C2.75736 21.1499 1.75 20.1425 1.75 18.8999V16.1001C1.75 14.8575 2.75736 13.8501 4 13.8501Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M6 17H10" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+        <path d="M5 3L8.25072 11L11.5005 3L14.7502 11L18 3" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     ),
   },
   dedicatedServer: {
     name: "Dedicated Server",
-    desc: "Kenyamanan layanan cloud yang berpadu dengan kontrol serta kinerja on premises server.",
+    desc: "Server khusus full control untuk beban tinggi.",
     badge: "Tier IV",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
-        <rect x="9" y="9" width="6" height="6" />
-        <line x1="9" y1="1" x2="9" y2="4" />
-        <line x1="15" y1="1" x2="15" y2="4" />
-        <line x1="9" y1="20" x2="9" y2="23" />
-        <line x1="15" y1="20" x2="15" y2="23" />
-        <line x1="20" y1="9" x2="23" y2="9" />
-        <line x1="20" y1="14" x2="23" y2="14" />
-        <line x1="1" y1="9" x2="4" y2="9" />
-        <line x1="1" y1="14" x2="4" y2="14" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 13.8501H20C21.2426 13.8501 22.25 14.8575 22.25 16.1001V18.8999C22.25 20.1425 21.2426 21.1499 20 21.1499H4C2.75736 21.1499 1.75 20.1425 1.75 18.8999V16.1001C1.75 14.8575 2.75736 13.8501 4 13.8501Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M6 17H10" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+        <path d="M15.8889 5H8.11111C7.49746 5 7 5.49746 7 6.11111V10C7 10.6136 7.49746 11.1111 8.11111 11.1111H15.8889C16.5025 11.1111 17 10.6136 17 10V6.11111C17 5.49746 16.5025 5 15.8889 5Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M9.22266 5V4.77778C9.22266 4.04107 9.51531 3.33453 10.0362 2.81359C10.5572 2.29266 11.2637 2 12.0004 2C12.7371 2 13.4437 2.29266 13.9646 2.81359C14.4856 3.33453 14.7782 4.04107 14.7782 4.77778V5" stroke="#016DFC" stroke-width="2"/>
       </svg>
     ),
   },
   vpsWhm: {
     name: "VPS WHM cPanel",
-    desc: "Kenyamanan layanan cloud yang berpadu dengan kontrol serta kinerja on premises server.",
+    desc: "VPS dengan WHM cPanel untuk kelola hosting.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 13.8501H20C21.2426 13.8501 22.25 14.8575 22.25 16.1001V18.8999C22.25 20.1425 21.2426 21.1499 20 21.1499H4C2.75736 21.1499 1.75 20.1425 1.75 18.8999V16.1001C1.75 14.8575 2.75736 13.8501 4 13.8501Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M6 17H10" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+        <path d="M9.56623 6.3098L9.96305 4.96907H7.39572C7.02481 4.96805 6.65646 5.02275 6.30646 5.1308C5.96499 5.23387 5.64476 5.38507 5.35836 5.57849C5.07185 5.77152 4.82196 6.00333 4.61799 6.26526C4.41059 6.53538 4.25578 6.83402 4.15992 7.14893L4.11464 7.31066C3.97674 7.75671 3.96303 8.22547 4.07469 8.67717C4.17891 9.10343 4.39002 9.50385 4.69256 9.84913C4.99899 10.1945 5.38819 10.4762 5.83241 10.6742C6.29696 10.8865 6.81367 10.9952 7.33713 10.9906H8.13609M12.1213 11L14.353 3.61897C14.4091 3.44016 14.5308 3.28273 14.6993 3.17128C14.8644 3.05681 15.0696 2.99634 15.2798 3.00017H17.6528C18.1723 2.99734 18.6849 3.1051 19.1468 3.31426C20.0564 3.72102 20.7098 4.46649 20.9258 5.3441C21.0382 5.79519 21.0227 6.26372 20.8806 6.70827L20.8353 6.85828C20.7397 7.17361 20.5859 7.47293 20.3799 7.74428C20.1809 8.01224 19.9335 8.24975 19.6475 8.44746C19.0628 8.84389 18.3456 9.05897 17.6075 9.05923H15.5515L15.951 7.68803" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     ),
   },
   bareMetal: {
     name: "Bare Metal Server",
-    desc: "Performa hardware murni tanpa lapisan virtualisasi untuk beban kerja maksimal.",
-    badge: "Hot",
+    desc: "Hardware fisik tanpa virtualisasi untuk performa.",
+    badge: "Tier IV",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="2" width="20" height="8" rx="2" />
-        <rect x="2" y="14" width="20" height="8" rx="2" />
-        <line x1="6" y1="6" x2="6.01" y2="6" />
-        <line x1="6" y1="18" x2="6.01" y2="18" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 13.8501H20C21.2426 13.8501 22.25 14.8575 22.25 16.1001V18.8999C22.25 20.1425 21.2426 21.1499 20 21.1499H4C2.75736 21.1499 1.75 20.1425 1.75 18.8999V16.1001C1.75 14.8575 2.75736 13.8501 4 13.8501Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M6 17H10" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+        <path d="M8 4.2384V8.7616L12 11L16 8.7616V4.2384L12 2L8 4.2384Z" stroke="#016DFC" stroke-width="2" stroke-linejoin="round"/>
       </svg>
     ),
   },
   privateCloud: {
     name: "Private Cloud",
-    desc: "Infrastruktur cloud eksklusif khusus untuk tingkat keamanan enterprise.",
+    desc: "Cloud privat untuk keamanan & isolasi tingkat tinggi.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
-        <rect x="10" y="10" width="4" height="4" rx="1" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M20 15.55C22 14.6555 22 12.6671 22 11.8214C22 10.7132 21.5259 9.65037 20.6819 8.86673C19.8379 8.0831 18.6932 7.64286 17.4996 7.64286H15.7094C15.3385 6.48769 14.6289 5.45105 13.66 4.64878C12.691 3.8465 11.5009 3.31019 10.2226 3.09979C8.94427 2.88938 7.62812 3.01317 6.4212 3.45731C5.21429 3.90145 4.16417 4.64845 3.38818 5.61484C2.61219 6.58123 2.14091 7.72893 2.027 8.92969C1.91309 10.1305 2.16104 11.337 2.74314 12.4144C3.01985 12.9266 3.43047 13.5361 4 14.1421" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.8889 14H8.11111C7.49746 14 7 14.5698 7 15.2727V19.7273C7 20.4302 7.49746 21 8.11111 21H15.8889C16.5025 21 17 20.4302 17 19.7273V15.2727C17 14.5698 16.5025 14 15.8889 14Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M9.22266 14V13.7778C9.22266 13.0411 9.51531 12.3345 10.0362 11.8136C10.5572 11.2927 11.2637 11 12.0004 11C12.7371 11 13.4437 11.2927 13.9646 11.8136C14.4856 12.3345 14.7782 13.0411 14.7782 13.7778V14" stroke="#016DFC" stroke-width="2"/>
       </svg>
     ),
   },
-  gpuServer: {
-    name: "GPU Server",
+  vpscyberpanel: {
+    name: "CyberPanel VPS",
     desc: "Komputasi super cepat khusus kebutuhan AI, Big Data, dan Rendering.",
-    badge: "Hot",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="4" y="4" width="16" height="16" rx="2" />
-        <rect x="9" y="9" width="6" height="6" />
-        <line x1="12" y1="4" x2="12" y2="6" />
-        <line x1="12" y1="18" x2="12" y2="20" />
-        <line x1="4" y1="12" x2="6" y2="12" />
-        <line x1="18" y1="12" x2="20" y2="12" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 13.8501H20C21.2426 13.8501 22.25 14.8575 22.25 16.1001V18.8999C22.25 20.1425 21.2426 21.1499 20 21.1499H4C2.75736 21.1499 1.75 20.1425 1.75 18.8999V16.1001C1.75 14.8575 2.75736 13.8501 4 13.8501Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M6 17H10" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+        <path d="M11.5 2.5L10 6.5H13L11 11.5" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
       </svg>
     ),
   },
   domainId: {
-    name: "Domain .ID",
-    desc: "Identitas digital resmi dan terpercaya asli Indonesia.",
-    badge: "Hot",
+    name: "Domain",
+    desc: "Domain .id resmi untuk identitas online Anda.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <line x1="2" y1="12" x2="22" y2="12" />
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 12H21" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11.9984 3C14.2496 5.46452 15.5289 8.66283 15.5984 12C15.5289 15.3372 14.2496 18.5355 11.9984 21C9.74729 18.5355 8.46796 15.3372 8.39844 12C8.46796 8.66283 9.74729 5.46452 11.9984 3Z" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     ),
   },
   sslCert: {
     name: "SSL Certificate",
-    desc: "Amankan enkripsi data traffic website Anda dari ancaman cyber.",
+    desc: "Sertifikat SSL untuk enkripsi website.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M19 8.3999H5C3.89543 8.3999 3 9.42558 3 10.6908V18.709C3 19.9742 3.89543 20.9999 5 20.9999H19C20.1046 20.9999 21 19.9742 21 18.709V10.6908C21 9.42558 20.1046 8.3999 19 8.3999Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M7 8.4V8C7 6.67392 7.52678 5.40215 8.46447 4.46447C9.40215 3.52678 10.6739 3 12 3C13.3261 3 14.5979 3.52678 15.5355 4.46447C16.4732 5.40215 17 6.67392 17 8V8.4" stroke="#016DFC" stroke-width="2"/>
+        <path d="M11 15H13" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
       </svg>
     ),
   },
   webInstant: {
     name: "Website Instant",
-    desc: "Solusi platform pembuatan website siap pakai dalam hitungan menit.",
+    desc: "Website instant siap online dalam menit.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-        <line x1="3" y1="9" x2="21" y2="9" />
-        <line x1="9" y1="21" x2="9" y2="9" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 3.75H20C21.2426 3.75 22.25 4.75736 22.25 6V19C22.25 20.2426 21.2426 21.25 20 21.25H4C2.75736 21.25 1.75 20.2426 1.75 19V6C1.75 4.75736 2.75736 3.75 4 3.75Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M4 10.75H20C21.2426 10.75 22.25 11.7574 22.25 13V19C22.25 20.2426 21.2426 21.25 20 21.25H4C2.75736 21.25 1.75 20.2426 1.75 19V13C1.75 11.7574 2.75736 10.75 4 10.75Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M10 7H12" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+        <path d="M5 7H7" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    ),
+  },
+   cloudhosting: {
+    name: "Cloud Hosting",
+    badge: "NVMe",
+    desc: "Hosting cloud untuk website modern.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 13.8501H20C21.2426 13.8501 22.25 14.8575 22.25 16.1001V18.8999C22.25 20.1425 21.2426 21.1499 20 21.1499H4C2.75736 21.1499 1.75 20.1425 1.75 18.8999V16.1001C1.75 14.8575 2.75736 13.8501 4 13.8501Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M6 17H10" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+        <path d="M5.39453 3.75H18.6055C19.6558 3.75007 20.5669 4.47677 20.7998 5.50098L21.7129 9.52344C21.8904 10.3055 21.2962 11.0498 20.4941 11.0498H3.50586C2.70382 11.0498 2.10958 10.3055 2.28711 9.52344L3.2002 5.50098C3.4331 4.47677 4.34416 3.75007 5.39453 3.75Z" stroke="#016DFC" stroke-width="2"/>
       </svg>
     ),
   },
   objectStorage: {
     name: "Object Storage",
-    desc: "Ruang penyimpanan data berbasis objek S3 yang siap dikoneksikan kapan saja.",
-    badge: "Hot",
+    desc: "Storage objek untuk backup & data statis.",
+    badge: "S3",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-        <line x1="12" y1="22.08" x2="12" y2="12" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M10.916 2.45215C11.591 2.08104 12.409 2.08104 13.084 2.45215L20.084 6.30273C20.8029 6.69811 21.2499 7.45303 21.25 8.27344V15.7266C21.2499 16.547 20.8029 17.3019 20.084 17.6973L13.084 21.5479C12.409 21.919 11.591 21.919 10.916 21.5479L3.91602 17.6973C3.19714 17.3019 2.75014 16.547 2.75 15.7266V8.27344C2.75014 7.45303 3.19714 6.69811 3.91602 6.30273L10.916 2.45215Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M3.17578 7.28564L10.6276 11.1167C11.4885 11.5593 12.5101 11.5593 13.371 11.1167L20.8227 7.28564" stroke="#016DFC" stroke-width="2"/>
+        <path d="M12 21.4285V11.4761" stroke="#016DFC" stroke-width="2"/>
+        <path d="M9.05759 14.1909C9.22698 14.2756 9.33398 14.4487 9.33398 14.6381V15.0416C9.33398 15.4132 8.94291 15.655 8.61046 15.4888L5.60891 13.9888C5.43926 13.904 5.33219 13.7305 5.33243 13.5409L5.33295 13.137C5.33342 12.7655 5.72435 12.5243 6.05655 12.6904L9.05759 14.1909Z" fill="#016DFC"/>
       </svg>
     ),
   },
   kubernetes: {
     name: "Kubernetes",
-    desc: "Layanan sistem orkestrasi container otomatis skala korporat.",
+    desc: "Platform orkestrasi container skala besar.",
+    badge: "B2B Choose",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
-        <circle cx="12" cy="12" r="3" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M10.916 2.45215C11.591 2.08104 12.409 2.08104 13.084 2.45215L20.084 6.30273C20.8029 6.69811 21.2499 7.45303 21.25 8.27344V15.7266C21.2499 16.547 20.8029 17.3019 20.084 17.6973L13.084 21.5479C12.409 21.919 11.591 21.919 10.916 21.5479L3.91602 17.6973C3.19714 17.3019 2.75014 16.547 2.75 15.7266V8.27344C2.75014 7.45303 3.19714 6.69811 3.91602 6.30273L10.916 2.45215Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M20.6461 7L16 10" stroke="#016DFC" stroke-width="2"/>
+        <path d="M3.00235 7L7.64844 10" stroke="#016DFC" stroke-width="2"/>
+        <path d="M12 22V16" stroke="#016DFC" stroke-width="2"/>
+        <path d="M8 10.2384V14.7616L12 17L16 14.7616V10.2384L12 8L8 10.2384Z" stroke="#016DFC" stroke-width="2" stroke-linejoin="round"/>
       </svg>
     ),
   },
   emailSolution: {
     name: "Email Solution",
-    desc: "Kolaborasi sistem email bisnis profesional dengan nama domain Anda sendiri.",
+    desc: "Solusi email profesional dengan domain sendiri.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect width="20" height="16" x="2" y="4" rx="2" />
-        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M17 20H19.5C20.8807 20 22 18.8807 22 17.5V6C22 4.34315 20.6569 3 19 3H5C3.34315 3 2 4.34315 2 6V17.5C2 18.8807 3.11929 20 4.5 20" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+        <path d="M2.5 3.5L10.5274 8.1341C11.4556 8.66992 12.5991 8.6699 13.5273 8.13402L21.5536 3.5" stroke="#016DFC" stroke-width="2"/>
+        <path d="M11.7145 21.5142C10.8082 21.5142 10.0014 21.3906 9.29403 21.1434C8.58665 20.8991 7.98864 20.5397 7.5 20.0653C7.01136 19.5937 6.6392 19.017 6.38352 18.3352C6.12784 17.6534 6 16.8778 6 16.0085C6 15.1505 6.12784 14.3721 6.38352 13.6733C6.64205 12.9744 7.01847 12.375 7.51278 11.875C8.0071 11.3721 8.6108 10.9858 9.32386 10.7159C10.0398 10.446 10.8551 10.311 11.7699 10.311C12.6165 10.311 13.3722 10.4346 14.0369 10.6818C14.7045 10.9289 15.2699 11.2812 15.733 11.7386C16.1989 12.1931 16.5526 12.7343 16.794 13.3622C17.0384 13.9872 17.1591 14.6789 17.1562 15.4375C17.1591 15.9602 17.1136 16.4403 17.0199 16.8778C16.9261 17.3153 16.7784 17.6974 16.5767 18.0241C16.3778 18.348 16.1165 18.6051 15.7926 18.7954C15.4688 18.9829 15.0767 19.0894 14.6165 19.115C14.2869 19.1406 14.0199 19.1164 13.8153 19.0426C13.6108 18.9687 13.4545 18.8593 13.3466 18.7144C13.2415 18.5667 13.1733 18.3948 13.142 18.1988H13.0909C13.0227 18.3693 12.8892 18.5241 12.6903 18.6633C12.4915 18.7997 12.2486 18.9062 11.9616 18.9829C11.6776 19.0568 11.375 19.0838 11.054 19.0639C10.7187 19.044 10.4006 18.9659 10.0994 18.8295C9.80114 18.6931 9.53551 18.4957 9.30256 18.2372C9.07244 17.9786 8.89062 17.659 8.7571 17.2784C8.62642 16.8977 8.55966 16.4573 8.55682 15.9573C8.55966 15.463 8.62926 15.0326 8.76562 14.6661C8.90483 14.2997 9.08807 13.9914 9.31534 13.7414C9.54545 13.4914 9.80114 13.2954 10.0824 13.1534C10.3636 13.0113 10.6463 12.9204 10.9304 12.8806C11.2514 12.8323 11.5554 12.8323 11.8423 12.8806C12.1293 12.9289 12.3707 13.0071 12.5668 13.115C12.7656 13.223 12.8892 13.3394 12.9375 13.4644H12.9972V12.9872H14.331V17.1463C14.3338 17.3423 14.3778 17.4943 14.4631 17.6022C14.5483 17.7102 14.6634 17.7642 14.8082 17.7642C15.0043 17.7642 15.1676 17.6775 15.2983 17.5042C15.4318 17.3309 15.5312 17.0653 15.5966 16.7073C15.6648 16.3494 15.6989 15.8934 15.6989 15.3394C15.6989 14.8054 15.6278 14.3366 15.4858 13.9332C15.3466 13.5269 15.1506 13.1818 14.8977 12.8977C14.6477 12.6108 14.3565 12.3778 14.0241 12.1988C13.6918 12.0198 13.331 11.8892 12.9418 11.8068C12.5554 11.7244 12.1577 11.6832 11.7486 11.6832C11.0412 11.6832 10.4233 11.7911 9.89489 12.0071C9.36648 12.2201 8.92614 12.5198 8.57386 12.9062C8.22159 13.2926 7.95739 13.7457 7.78125 14.2656C7.60795 14.7826 7.51989 15.3465 7.51705 15.9573C7.51989 16.6306 7.61364 17.2272 7.7983 17.7471C7.9858 18.2642 8.26136 18.6988 8.625 19.0511C8.98864 19.4034 9.4375 19.6704 9.97159 19.8522C10.5057 20.034 11.1193 20.125 11.8125 20.125C12.1392 20.125 12.4588 20.1008 12.7713 20.0525C13.0838 20.0071 13.3665 19.9502 13.6193 19.8821C13.8722 19.8167 14.0753 19.7528 14.2287 19.6903L14.6506 20.9261C14.4716 21.0284 14.2287 21.1235 13.9219 21.2116C13.6179 21.3025 13.2741 21.375 12.8906 21.4289C12.5099 21.4858 12.1179 21.5142 11.7145 21.5142ZM11.5185 17.6619C11.8651 17.6619 12.1406 17.5951 12.3452 17.4616C12.5526 17.3281 12.7003 17.1306 12.7884 16.8693C12.8793 16.6051 12.9219 16.2798 12.9162 15.8934C12.9134 15.5525 12.8693 15.2642 12.7841 15.0284C12.7017 14.7897 12.5582 14.6093 12.3537 14.4872C12.152 14.3622 11.8707 14.2997 11.5099 14.2997C11.1946 14.2997 10.9261 14.3664 10.7045 14.5C10.4858 14.6335 10.3182 14.821 10.2017 15.0625C10.0881 15.3011 10.0298 15.5823 10.027 15.9062C10.0298 16.2073 10.0781 16.4929 10.1719 16.7627C10.2656 17.0298 10.4205 17.2471 10.6364 17.4147C10.8523 17.5795 11.1463 17.6619 11.5185 17.6619Z" fill="#016DFC"/>
       </svg>
     ),
   },
   backupSolution: {
     name: "Backup Solution",
-    desc: "Sistem proteksi data berkala aman dari potensi serangan malware berbahaya.",
+    desc: "Cadangan otomatis untuk data penting.",
     badge: "Hot",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-        <path d="M3 3v5h5" />
-        <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
-        <path d="M16 21v-5h5" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M21 12C21 9.61305 20.0518 7.32387 18.364 5.63604C16.6761 3.94821 14.3869 3 12 3C9.48395 3.00947 7.06897 3.99122 5.26 5.74L3 8" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 3V8H8" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 12C3 14.3869 3.94821 16.6761 5.63604 18.364C7.32387 20.0518 9.61305 21 12 21C14.516 20.9905 16.931 20.0088 18.74 18.26L21 16" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 16L21 16L21 21" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    ),
+  },
+  api: {
+    name: "API",
+    desc: "Akses API untuk integrasi dan otomasi.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 3.75H20C21.2426 3.75 22.25 4.75736 22.25 6V19C22.25 20.2426 21.2426 21.25 20 21.25H4C2.75736 21.25 1.75 20.2426 1.75 19V6C1.75 4.75736 2.75736 3.75 4 3.75Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M6 9L8.93336 11.2001C9.46668 11.6002 9.46666 12.4002 8.93331 12.8001L6 15" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+        <path d="M19 12H13" stroke="#016DFC" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    ),
+  },
+  support: {
+    name: "Support",
+    desc: "Dukungan layanan & konsultasi teknis.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M20.9999 18V18.75C20.9999 19.5456 20.6839 20.3087 20.1213 20.8713C19.5586 21.4339 18.7956 21.75 18 21.75H12.75" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20.9998 11.2504H17.9999C17.602 11.2504 17.2205 11.4084 16.9392 11.6897C16.6579 11.971 16.4999 12.3526 16.4999 12.7504V16.5004C16.4999 16.8982 16.6579 17.2797 16.9392 17.561C17.2205 17.8423 17.602 18.0003 17.9999 18.0003H20.9998V11.2504ZM20.9998 11.2504C20.9998 10.0685 20.767 8.89821 20.3148 7.80629C19.8625 6.71437 19.1995 5.72222 18.3638 4.8865C17.5281 4.05078 16.536 3.38785 15.444 2.93557C14.3521 2.48328 13.1818 2.25049 11.9999 2.25049C10.818 2.25049 9.64772 2.48328 8.5558 2.93557C7.46388 3.38785 6.47173 4.05078 5.63602 4.8865C4.8003 5.72222 4.13737 6.71437 3.68508 7.80629C3.23279 8.89821 3 10.0685 3 11.2504M3 11.2504V16.5004C3 16.8982 3.15803 17.2797 3.43934 17.561C3.72064 17.8423 4.10217 18.0003 4.49999 18.0003H5.99997C6.39779 18.0003 6.77932 17.8423 7.06062 17.561C7.34193 17.2797 7.49996 16.8982 7.49996 16.5004V12.7504C7.49996 12.3526 7.34193 11.971 7.06062 11.6897C6.77932 11.4084 6.39779 11.2504 5.99997 11.2504H3Z" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    ),
+  },
+  status: {
+    name: "Server Status",
+    desc: "Cek status server dan layanan Anda.",
+    icon: (
+     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M4 3.75H20C21.2426 3.75 22.25 4.75736 22.25 6V19C22.25 20.2426 21.2426 21.25 20 21.25H4C2.75736 21.25 1.75 20.2426 1.75 19V6C1.75 4.75736 2.75736 3.75 4 3.75Z" stroke="#016DFC" stroke-width="2"/>
+      <path d="M19 12.5L16.5604 12.5C16.3452 12.5 16.1541 12.6377 16.086 12.8419L14.7405 16.8786C14.5825 17.3525 13.9037 17.3273 13.7814 16.8429L12.2184 10.656C12.096 10.1718 11.4174 10.1464 11.2593 10.6202L9.72817 15.2085C9.59563 15.6057 9.06283 15.6738 8.83466 15.3227L7.14788 12.7275C7.05565 12.5856 6.89789 12.5 6.72865 12.5L5 12.5" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+      <path d="M5 7H7" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    ),
+  },
+  transfer: {
+    name: "Pindah / Transfer",
+    desc: "Pindah layanan atau migrasi domain mudah.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M17.4688 13.9375L20.9995 17.4682L17.4688 20.9989" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3.34375 17.4678H20.9973" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6.87446 10.4066L3.34375 6.87593L6.87446 3.34521" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20.9973 6.87598H3.34375" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    ),
+  },
+  manageservice: {
+    name: "Manage Service",
+    desc: "Kelola layanan IT dengan dukungan penuh.",
+    icon: (
+     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <g clip-path="url(#clip0_9655_7122)">
+          <path d="M4 1.75H8C9.24264 1.75 10.25 2.75736 10.25 4V8C10.25 9.24264 9.24264 10.25 8 10.25H4C2.75736 10.25 1.75 9.24264 1.75 8V4C1.75 2.75736 2.75736 1.75 4 1.75Z" stroke="#016DFC" stroke-width="2"/>
+          <path d="M18.591 1.58036L21.4194 4.40879C22.2981 5.28747 22.2981 6.71209 21.4194 7.59077L18.591 10.4192C17.7123 11.2979 16.2877 11.2979 15.409 10.4192L12.5806 7.59077C11.7019 6.71209 11.7019 5.28747 12.5806 4.40879L15.409 1.58036C16.2877 0.701682 17.7123 0.701682 18.591 1.58036Z" stroke="#016DFC" stroke-width="2"/>
+          <path d="M4 12.75H8C9.24264 12.75 10.25 13.7574 10.25 15V19C10.25 20.2426 9.24264 21.25 8 21.25H4C2.75736 21.25 1.75 20.2426 1.75 19V15C1.75 13.7574 2.75736 12.75 4 12.75Z" stroke="#016DFC" stroke-width="2"/>
+          <path d="M15 12.75H19C20.2426 12.75 21.25 13.7574 21.25 15V19C21.25 20.2426 20.2426 21.25 19 21.25H15C13.7574 21.25 12.75 20.2426 12.75 19V15C12.75 13.7574 13.7574 12.75 15 12.75Z" stroke="#016DFC" stroke-width="2"/>
+        </g>
+        <defs>
+          <clipPath id="clip0_9655_7122">
+            <rect width="24" height="24" fill="white"/>
+          </clipPath>
+        </defs>
+      </svg>
+    ),
+  },
+  reseller: {
+    name: "Reseller Hosting",
+    desc: "Bisnis reseller hosting dengan margin menarik.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 13.8501H20C21.2426 13.8501 22.25 14.8575 22.25 16.1001V18.8999C22.25 20.1425 21.2426 21.1499 20 21.1499H4C2.75736 21.1499 1.75 20.1425 1.75 18.8999V16.1001C1.75 14.8575 2.75736 13.8501 4 13.8501Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M6 17H10" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+        <path d="M9.75 10H13.125C13.6223 10 14.0992 9.81563 14.4508 9.48744C14.8025 9.15925 15 8.71413 15 8.25C15 7.78587 14.8025 7.34075 14.4508 7.01256C14.0992 6.68437 13.6223 6.5 13.125 6.5H10.875C10.3777 6.5 9.90081 6.31563 9.54917 5.98744C9.19754 5.65925 9 5.21413 9 4.75C9 4.28587 9.19754 3.84075 9.54917 3.51256C9.90081 3.18437 10.3777 3 10.875 3H14.25" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 10V12" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+        <path d="M12 1V3" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    ),
+  },
+  cybersecurity: {
+    name: "Cyber Security Service",
+    desc: "Proteksi keamanan siber untuk infrastruktur.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M21 9.54545V3.81818C21 3.60119 20.9138 3.39308 20.7604 3.23964C20.6069 3.0862 20.3988 3 20.1818 3H3.81818C3.60119 3 3.39308 3.0862 3.23964 3.23964C3.0862 3.39308 3 3.60119 3 3.81818V9.54545C3 19.3636 12 21.8182 12 21.8182C12 21.8182 21 19.3636 21 9.54545Z" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.91016 12.0003L10.3647 14.4548L16.092 8.72754" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    ),
+  },
+  lisensi: {
+    name: "Lisensi",
+    desc: "Layanan lisensi software untuk bisnis.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M15.1898 21.4537H20.0532C20.2682 21.4537 20.4743 21.3683 20.6264 21.2163C20.7784 21.0643 20.8638 20.8581 20.8638 20.6431V7.674L15.1898 2H5.46291C5.24794 2 5.04177 2.0854 4.88975 2.23741C4.73774 2.38942 4.65234 2.59559 4.65234 2.81057V8.09432" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5.88477 17.3765L5.69727 17.1646C5.10731 16.4958 4.75004 15.6201 4.75 14.6597L4.75488 14.4644C4.85328 12.5272 6.40659 10.9739 8.34375 10.8755L8.53906 10.8706C10.6317 10.8707 12.328 12.5673 12.3281 14.6597C12.3281 15.6197 11.9713 16.4949 11.3818 17.1636L11.1943 17.3765V21.3901L9.12793 20.3579L8.98633 20.2964C8.6976 20.1923 8.38076 20.1921 8.0918 20.2964L7.9502 20.3579L5.88477 21.3901V17.3765Z" stroke="#016DFC" stroke-width="2"/>
+      </svg>
+    ),
+  },
+  cloudstoragedrive: {
+    name: "Cloud Storage Drive",
+    desc: "Drive cloud untuk simpan file aman.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M15.6282 10.9001H10.0177C9.16082 10.8999 8.32091 10.6728 7.5918 10.2442C6.86269 9.81554 6.2731 9.20229 5.88891 8.47294C5.50473 7.74359 5.34108 6.92687 5.41626 6.11404C5.49144 5.30122 5.80248 4.52431 6.31464 3.87014C6.82679 3.21597 7.51987 2.71031 8.31643 2.40966C9.113 2.10901 9.98166 2.02522 10.8254 2.16765C11.669 2.31008 12.4545 2.67311 13.094 3.21619C13.7335 3.75927 14.2019 4.461 14.4467 5.24296H15.6282C16.4159 5.24296 17.1714 5.54097 17.7285 6.07143C18.2855 6.60189 18.5984 7.32134 18.5984 8.07153C18.5984 8.82171 18.2855 9.54117 17.7285 10.0716C17.1714 10.6021 16.4159 10.9001 15.6282 10.9001Z" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22.25 19.1162C22.2497 19.1181 22.2494 19.1205 22.249 19.123C22.2483 19.1276 22.248 19.1335 22.2471 19.1396L22.2285 19.2559L22.2432 19.3457C22.2226 19.3833 22.1344 19.5234 21.7646 19.7334C21.2957 19.9998 20.5673 20.2652 19.6025 20.4971C17.6847 20.9579 14.9969 21.2499 12.001 21.25C9.00462 21.25 6.31565 20.9579 4.39746 20.4971C3.4325 20.2652 2.70434 19.9998 2.23535 19.7334C1.85592 19.5179 1.7715 19.3769 1.75391 19.3438L1.76953 19.2568L1.75293 19.1396L1.75 19.1162V12.7119C2.39736 13.0349 3.23996 13.3103 4.20898 13.5342C6.25496 14.0068 8.99981 14.291 11.999 14.291C15.0053 14.291 17.7557 14.0051 19.8027 13.5303C20.7666 13.3067 21.6053 13.0323 22.25 12.71V19.1162ZM22.252 19.3945C22.2525 19.3979 22.252 19.3994 22.252 19.3994C22.2519 19.3986 22.2513 19.3956 22.251 19.3916L22.252 19.3945Z" stroke="#016DFC" stroke-width="2"/>
+        <path d="M10 18H14" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
       </svg>
     ),
   },
@@ -226,85 +348,188 @@ export const productData: Record<string, ProductItem[]> = {
     allProducts.colocationServer,
     allProducts.bareMetal,
     allProducts.privateCloud,
-    allProducts.gpuServer,
+    allProducts.vpscyberpanel ,
     allProducts.dedicatedServer,
     allProducts.vpsWhm,
+    allProducts.objectStorage,
+    allProducts.kubernetes,
   ],
   "Domain & Website": [
     allProducts.domainId,
-    allProducts.sslCert,
     allProducts.webInstant,
     allProducts.wordpressHosting,
+    allProducts.cloudhosting,
   ],
   "Developer Tools": [
-    allProducts.objectStorage,
-    allProducts.kubernetes,
+    allProducts.api,
+    allProducts.support,
+    allProducts.status,
   ],
   "Solution & Addons": [
     allProducts.emailSolution,
     allProducts.backupSolution,
+    allProducts.cybersecurity,
+    allProducts.reseller,
+    allProducts.cloudstoragedrive,
+    allProducts.lisensi,
+    allProducts.transfer,
+    allProducts.manageservice,
+    allProducts.sslCert,
   ],
 };
 
 // ============================================================
 // DATA SOLUSI
 // ============================================================
-const solutionIconCloud = (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
-  </svg>
-);
+const solutionIndustryIcons: React.ReactNode[] = [
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M11.6426 5.04688C11.8654 4.92617 12.1346 4.92617 12.3574 5.04688L21.208 9.84082C21.7314 10.1246 21.7314 10.8754 21.208 11.1592L12.3574 15.9531C12.1346 16.0738 11.8654 16.0738 11.6426 15.9531L2.79199 11.1592C2.26863 10.8754 2.26863 10.1246 2.79199 9.84082L11.6426 5.04688Z" stroke="#016DFC" stroke-width="2"/>
+      <path d="M6 16V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V16" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+      <path d="M20.25 17C20.25 17.4142 20.5858 17.75 21 17.75C21.4142 17.75 21.75 17.4142 21.75 17H21H20.25ZM21 11H20.25V17H21H21.75V11H21Z" fill="#016DFC"/>
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9.54917 15H13.125C13.6223 15 14.0992 14.8156 14.4508 14.4874C14.8025 14.1592 15 13.7141 15 13.25C15 12.7859 14.8025 12.3408 14.4508 12.0126C14.0992 11.6844 13.6223 11.5 13.125 11.5H10.875C10.3777 11.5 9.90081 11.3156 9.54917 10.9874C9.19754 10.6592 9 10.2141 9 9.75C9 9.28587 9.19754 8.84075 9.54917 8.51256C9.90081 8.18437 10.3777 8 10.875 8H14.4508" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 15V17" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+      <path d="M12 6V8" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M4.49609 16V19C4.49609 20.1046 5.39152 21 6.49609 21H18.4961C19.6007 21 20.4961 20.1046 20.4961 19V16" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+      <path d="M8.49609 17H12.4961" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+      <path d="M5.89062 3.75H19.1016C20.1516 3.75028 21.062 4.4769 21.2949 5.50098L22.209 9.52246C22.3624 10.1976 21.9387 10.8482 21.2998 11.0098C21.0318 11.0774 20.8261 11.2862 20.7578 11.5479L20.7373 11.6631C20.6519 12.5187 19.8713 13.2499 18.8486 13.25C17.8442 13.2499 17.0731 12.543 16.9668 11.7061C16.9253 11.3783 16.6759 11.1215 16.3613 11.0625L16.2227 11.0498H15.1221C14.7917 11.0498 14.5063 11.2647 14.4082 11.5693L14.3779 11.7061C14.2717 12.543 13.5004 13.2498 12.4961 13.25C11.4913 13.25 10.7195 12.5428 10.6133 11.7061C10.5718 11.3782 10.3224 11.1215 10.0078 11.0625L9.86914 11.0498H8.76953C8.43916 11.0498 8.1538 11.2647 8.05566 11.5693L8.02539 11.7061C7.9192 12.5428 7.1473 13.2499 6.14258 13.25C5.12018 13.2499 4.34036 12.5188 4.25488 11.6631C4.22744 11.388 4.05148 11.1539 3.80273 11.0479L3.69238 11.0098L3.5752 10.9746C3.00185 10.7678 2.63836 10.1555 2.78223 9.52246L3.69629 5.50098C3.9292 4.47692 4.84007 3.75 5.89062 3.75Z" stroke="#016DFC" stroke-width="2" stroke-linejoin="round"/>
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M21.1652 11.721L5.64102 15.8303C5.2525 15.9332 4.84016 15.7934 4.59422 15.4755L2.21785 12.4042C1.89971 11.993 2.34248 11.4297 2.81719 11.6417L5.17608 12.6951C5.38563 12.7887 5.62099 12.8073 5.84267 12.7479L9.1737 11.8554C9.82899 11.6798 10.123 10.9165 9.75479 10.3467L6.74521 5.68917C6.37702 5.11936 6.67101 4.3561 7.3263 4.18052L7.45263 4.14667C7.79218 4.05569 8.15456 4.14967 8.40709 4.39421L14.1917 9.9957C14.3886 10.1863 14.655 10.2878 14.9288 10.2765L20.9093 10.0286C21.3119 10.0119 21.6722 10.2767 21.7765 10.6659C21.8998 11.1262 21.6259 11.599 21.1652 11.721Z" stroke="#016DFC" stroke-width="2"/>
+      <path d="M5 20H19" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M22.2417 7L20.8275 13.9017C20.6369 14.8321 19.8181 15.5002 18.8683 15.5002H11.2561C10.2515 15.5002 9.4028 14.755 9.27287 13.7589L8.22713 5.74138C8.0972 4.74522 7.24847 4.00002 6.24387 4.00005L2 4.00019" stroke="#016DFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 8H17" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="10.5" cy="18.5" r="1.5" fill="#016DFC"/>
+      <circle cx="19.5" cy="18.5" r="1.5" fill="#016DFC"/>
+    </svg>
+  ),
+  (
+   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <mask id="path-1-inside-1_9659_7316" fill="white">
+        <path d="M10.1504 3.4805C10.593 1.50518 13.4079 1.50521 13.8506 3.4805C14.1375 4.7611 15.6073 5.36951 16.7158 4.66703C18.4256 3.58326 20.4168 5.57443 19.333 7.28422C18.6305 8.39264 19.239 9.86237 20.5195 10.1494C22.4949 10.5921 22.4949 13.407 20.5195 13.8496C19.239 14.1367 18.6306 15.6065 19.333 16.7149C20.4168 18.4247 18.4256 20.4158 16.7158 19.3321C15.6074 18.6297 14.1376 19.2381 13.8506 20.5186C13.4079 22.4939 10.593 22.4939 10.1504 20.5186C9.86331 19.238 8.39358 18.6295 7.28514 19.3321C5.57536 20.4158 3.58419 18.4247 4.66795 16.7149C5.37051 15.6064 4.76205 14.1366 3.48143 13.8496C1.5062 13.4069 1.50618 10.5921 3.48143 10.1494C4.76208 9.86246 5.37058 8.3927 4.66795 7.28422C3.58424 5.57445 5.57538 3.58333 7.28514 4.66703C8.39362 5.36965 9.86338 4.76115 10.1504 3.4805ZM12.001 9.99906C10.8965 9.99906 10.0012 10.8947 10.001 11.9991C10.001 13.1036 10.8964 13.9991 12.001 13.9991C13.1055 13.999 14.001 13.1036 14.001 11.9991C14.0007 10.8947 13.1054 9.99911 12.001 9.99906Z"/>
+      </mask>
+      <path d="M10.1504 3.4805L12.102 3.91786L12.102 3.91784L10.1504 3.4805ZM13.8506 3.4805L15.8022 3.04316L15.8022 3.04313L13.8506 3.4805ZM16.7158 4.66703L17.7864 6.35635L17.7865 6.35626L16.7158 4.66703ZM19.333 7.28422L17.6438 6.21347L17.6437 6.21356L19.333 7.28422ZM20.5195 10.1494L20.082 12.101L20.0822 12.101L20.5195 10.1494ZM20.5195 13.8496L20.0822 11.898L20.082 11.8981L20.5195 13.8496ZM19.333 16.7149L17.6436 17.7854L17.6438 17.7856L19.333 16.7149ZM16.7158 19.3321L17.7865 17.6428L17.7863 17.6427L16.7158 19.3321ZM13.8506 20.5186L11.899 20.0812L11.899 20.0813L13.8506 20.5186ZM10.1504 20.5186L12.102 20.0813L12.1019 20.0811L10.1504 20.5186ZM7.28514 19.3321L6.21442 17.6428L6.2144 17.6428L7.28514 19.3321ZM4.66795 16.7149L6.35719 17.7856L6.35723 17.7855L4.66795 16.7149ZM3.48143 13.8496L3.04401 15.8012L3.04409 15.8012L3.48143 13.8496ZM3.48143 10.1494L3.04409 8.19785L3.04404 8.19786L3.48143 10.1494ZM4.66795 7.28422L2.9787 8.35493L2.97872 8.35496L4.66795 7.28422ZM7.28514 4.66703L8.35588 2.97779L8.35584 2.97777L7.28514 4.66703ZM12.001 9.99906L12.0011 7.99906H12.001V9.99906ZM10.001 11.9991L8.00096 11.9987V11.9991H10.001ZM12.001 13.9991V15.9991H12.0011L12.001 13.9991ZM14.001 11.9991H16.001V11.9987L14.001 11.9991ZM10.1504 3.4805L12.102 3.91784C12.1072 3.8945 12.1095 3.90033 12.0959 3.92122C12.0827 3.94151 12.0643 3.96108 12.0441 3.97603C12.0073 4.00332 11.9896 3.99902 12.0005 3.99902C12.0113 3.99902 11.9936 4.00332 11.9568 3.97605C11.9367 3.9611 11.9182 3.94154 11.905 3.92125C11.8915 3.90037 11.8938 3.89454 11.899 3.91788L13.8506 3.4805L15.8022 3.04313C14.8926 -1.01551 9.10838 -1.01586 8.19878 3.04316L10.1504 3.4805ZM13.8506 3.4805L11.899 3.91784C12.4888 6.54999 15.5094 7.79937 17.7864 6.35635L16.7158 4.66703L15.6452 2.9777C15.6519 2.97345 15.6711 2.96515 15.6954 2.96337C15.7159 2.96188 15.7306 2.96555 15.7402 2.96956C15.7499 2.97357 15.763 2.98142 15.7766 2.99708C15.7927 3.01571 15.8004 3.03529 15.8022 3.04316L13.8506 3.4805ZM16.7158 4.66703L17.7865 6.35626C17.8067 6.3435 17.8041 6.34925 17.7797 6.35444C17.756 6.35948 17.7291 6.36025 17.7043 6.35657C17.6592 6.34985 17.6499 6.3344 17.6578 6.34225C17.6656 6.35011 17.6502 6.34086 17.6435 6.29568C17.6398 6.2709 17.6405 6.24402 17.6456 6.22032C17.6508 6.19593 17.6565 6.19334 17.6438 6.21347L19.333 7.28422L21.0222 8.35496C23.2491 4.84173 19.1583 0.75089 15.6451 2.97779L16.7158 4.66703ZM19.333 7.28422L17.6437 6.21356C16.2004 8.4908 17.4505 11.511 20.082 12.101L20.5195 10.1494L20.9571 8.1979C20.9649 8.19966 20.9845 8.20739 21.003 8.22344C21.0186 8.23694 21.0265 8.25 21.0305 8.25966C21.0345 8.26932 21.0382 8.28404 21.0367 8.30454C21.0349 8.32893 21.0266 8.34812 21.0223 8.35487L19.333 7.28422ZM20.5195 10.1494L20.0822 12.101C20.1055 12.1063 20.0997 12.1085 20.0788 12.095C20.0585 12.0818 20.039 12.0634 20.024 12.0432C19.9967 12.0064 20.001 11.9887 20.001 11.9995C20.001 12.0104 19.9967 11.9927 20.024 11.9559C20.039 11.9357 20.0585 11.9173 20.0788 11.9041C20.0997 11.8906 20.1055 11.8928 20.0822 11.898L20.5195 13.8496L20.9569 15.8012C25.0157 14.8917 25.0157 9.10742 20.9569 8.19785L20.5195 10.1494ZM20.5195 13.8496L20.082 11.8981C17.4503 12.4881 16.2007 15.5084 17.6436 17.7854L19.333 16.7149L21.0224 15.6443C21.0266 15.6511 21.0349 15.6702 21.0367 15.6946C21.0382 15.7151 21.0345 15.7297 21.0305 15.7394C21.0265 15.749 21.0187 15.7621 21.0031 15.7756C20.9845 15.7917 20.9649 15.7994 20.957 15.8012L20.5195 13.8496ZM19.333 16.7149L17.6438 17.7856C17.6565 17.8057 17.6508 17.8032 17.6456 17.7788C17.6405 17.7551 17.6398 17.7282 17.6435 17.7034C17.6502 17.6582 17.6656 17.649 17.6578 17.6568C17.6499 17.6647 17.6592 17.6492 17.7043 17.6425C17.7291 17.6388 17.756 17.6396 17.7797 17.6447C17.8041 17.6498 17.8067 17.6556 17.7865 17.6428L16.7158 19.3321L15.6451 21.0213C19.1583 23.2482 23.2491 19.1574 21.0222 15.6441L19.333 16.7149ZM16.7158 19.3321L17.7863 17.6427C15.5094 16.1998 12.4889 17.4492 11.899 20.0812L13.8506 20.5186L15.8021 20.956C15.8004 20.9639 15.7926 20.9835 15.7765 21.0021C15.763 21.0178 15.7499 21.0256 15.7403 21.0296C15.7306 21.0336 15.7159 21.0373 15.6955 21.0358C15.6712 21.034 15.652 21.0257 15.6453 21.0214L16.7158 19.3321ZM13.8506 20.5186L11.899 20.0813C11.8937 20.1046 11.8915 20.0988 11.905 20.0779C11.9182 20.0576 11.9367 20.038 11.9568 20.0231C11.9936 19.9958 12.0113 20.0001 12.0005 20.0001C11.9897 20.0001 12.0073 19.9958 12.0441 20.0231C12.0643 20.038 12.0827 20.0576 12.0959 20.0779C12.1095 20.0988 12.1072 20.1046 12.102 20.0813L10.1504 20.5186L8.19878 20.9559C9.10834 25.0148 14.8926 25.0148 15.8022 20.9559L13.8506 20.5186ZM10.1504 20.5186L12.1019 20.0811C11.512 17.4495 8.49175 16.1993 6.21442 17.6428L7.28514 19.3321L8.35586 21.0213C8.34912 21.0256 8.32994 21.0339 8.30553 21.0357C8.28502 21.0372 8.27027 21.0335 8.2606 21.0295C8.25092 21.0255 8.23785 21.0177 8.22434 21.002C8.20829 20.9835 8.20057 20.9639 8.19881 20.9561L10.1504 20.5186ZM7.28514 19.3321L6.2144 17.6428C6.19427 17.6556 6.19686 17.6498 6.22125 17.6447C6.24494 17.6396 6.27182 17.6388 6.2966 17.6425C6.34179 17.6492 6.35104 17.6647 6.34318 17.6568C6.33532 17.649 6.35077 17.6582 6.35749 17.7034C6.36118 17.7282 6.3604 17.7551 6.35536 17.7788C6.35017 17.8032 6.34443 17.8057 6.35719 17.7856L4.66795 16.7149L2.97872 15.6441C0.751815 19.1574 4.84266 23.2482 8.35588 21.0213L7.28514 19.3321ZM4.66795 16.7149L6.35723 17.7855C7.80047 15.5084 6.55084 12.4879 3.91877 11.898L3.48143 13.8496L3.04409 15.8012C3.03623 15.7995 3.01667 15.7918 2.99805 15.7757C2.98239 15.7621 2.97454 15.749 2.97053 15.7393C2.96651 15.7296 2.96284 15.7149 2.96433 15.6944C2.96611 15.6701 2.97442 15.6509 2.97867 15.6442L4.66795 16.7149ZM3.48143 13.8496L3.91885 11.8981C3.89552 11.8928 3.90135 11.8906 3.92223 11.9041C3.94252 11.9173 3.96208 11.9358 3.97703 11.9559C4.0043 11.9927 4 12.0104 4 11.9995C4 11.9887 4.0043 12.0064 3.97702 12.0432C3.96207 12.0633 3.9425 12.0818 3.92221 12.095C3.90132 12.1085 3.89549 12.1063 3.91882 12.101L3.48143 10.1494L3.04404 8.19786C-1.01479 9.10753 -1.01456 14.8916 3.04401 15.8012L3.48143 13.8496ZM3.48143 10.1494L3.91877 12.101C6.55076 11.5112 7.80065 8.49072 6.35719 6.21347L4.66795 7.28422L2.97872 8.35496C2.97447 8.34826 2.96615 8.3291 2.96437 8.30471C2.96288 8.2842 2.96656 8.26945 2.97057 8.25974C2.97459 8.25004 2.98245 8.23694 2.9981 8.22341C3.01671 8.20733 3.03625 8.19961 3.04409 8.19785L3.48143 10.1494ZM4.66795 7.28422L6.3572 6.2135C6.34445 6.19338 6.35019 6.19597 6.35538 6.22036C6.36042 6.24406 6.3612 6.27094 6.35751 6.29572C6.35079 6.3409 6.33534 6.35015 6.3432 6.34229C6.35107 6.33443 6.34182 6.34988 6.29664 6.35659C6.27187 6.36028 6.24499 6.35951 6.2213 6.35447C6.19691 6.34928 6.19432 6.34353 6.21444 6.35629L7.28514 4.66703L8.35584 2.97777C4.84271 0.75104 0.751859 4.84168 2.9787 8.35493L4.66795 7.28422ZM7.28514 4.66703L6.2144 6.35626C8.49165 7.79973 11.5122 6.54981 12.102 3.91786L10.1504 3.4805L8.19878 3.04315C8.20054 3.03532 8.20826 3.01577 8.22433 2.99717C8.23786 2.98152 8.25096 2.97366 8.26066 2.96965C8.27037 2.96563 8.28512 2.96195 8.30562 2.96344C8.33002 2.96522 8.34918 2.97354 8.35588 2.97779L7.28514 4.66703ZM12.001 9.99906V7.99906C9.79157 7.99906 8.00139 9.7904 8.00096 11.9987L10.001 11.9991L12.001 11.9994V11.9991V9.99906ZM10.001 11.9991H8.00096C8.00096 14.2082 9.79182 15.9991 12.001 15.9991V13.9991V11.9991H10.001ZM12.001 13.9991L12.0011 15.9991C14.21 15.999 16.001 14.2083 16.001 11.9991H14.001H12.001H12.0009L12.001 13.9991ZM14.001 11.9991L16.001 11.9987C16.0005 9.79034 14.2102 7.99916 12.0011 7.99906L12.001 9.99906L12.0009 11.9991L12.001 11.9994L14.001 11.9991Z" fill="#016DFC" mask="url(#path-1-inside-1_9659_7316)"/>
+    </svg>
+  ),
+  (
+   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <g clip-path="url(#clip0_9659_7385)">
+        <path d="M21.6875 11.9267L16.199 11.9267C16.0083 11.9267 15.8342 12.0352 15.7502 12.2064L14.4344 14.8862C14.236 15.2903 13.6465 15.2469 13.5093 14.8182L11.9159 9.83877C11.7725 9.39071 11.146 9.37062 10.9742 9.80858L9.44232 13.7141C9.29378 14.0928 8.7793 14.1451 8.55762 13.804L6.83538 11.1543C6.74315 11.0124 6.58539 10.9267 6.41615 10.9267L1.6875 10.9267" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+        <path d="M20.6875 7.76049C20.5863 6.56092 20.0768 5.38931 19.1589 4.47142C17.3213 2.63383 13.8714 2.90233 12.2116 5.4559C11.9718 5.82483 11.3494 5.85096 11.0929 5.49338C9.2369 2.905 6.06262 2.62488 4.21608 4.47142C3.29819 5.38931 2.78867 6.56092 2.6875 7.76049M5.5 16.3889L11.0865 20.486C11.4431 20.7475 11.9291 20.7437 12.2816 20.4768L17.6799 16.3889" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_9659_7385">
+          <rect width="24" height="24" fill="white"/>
+        </clipPath>
+      </defs>
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M4 3.75H20C21.2426 3.75 22.25 4.75736 22.25 6V19C22.25 20.2426 21.2426 21.25 20 21.25H4C2.75736 21.25 1.75 20.2426 1.75 19V6C1.75 4.75736 2.75736 3.75 4 3.75Z" stroke="#016DFC" stroke-width="2"/>
+      <path d="M9.75 14.2187L9.75 7.32031L15.5361 10.7686L9.75 14.2187Z" stroke="#016DFC" stroke-width="2"/>
+      <path d="M10 17.5C10.2761 17.5 10.5 17.7239 10.5 18C10.5 18.2761 10.2761 18.5 10 18.5C9.72386 18.5 9.5 18.2761 9.5 18C9.5 17.7239 9.72386 17.5 10 17.5Z" stroke="#016DFC"/>
+      <path d="M13 18H19" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+      <path d="M5 18H7" stroke="#016DFC" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 6H20V18H4V6Z" />
+      <path d="M9 9H15" />
+      <path d="M9 13H13" />
+    </svg>
+  ),
+];
 
-const solutionIconApps = (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-    <path d="M3 3v5h5" />
-    <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
-    <path d="M16 21v-5h5" />
-  </svg>
-);
+const solutionAppIcons: React.ReactNode[] = [
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="7" r="3" />
+      <path d="M6 21V18C6 16.8954 6.89543 16 8 16H16C17.1046 16 18 16.8954 18 18V21" />
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 7H19" />
+      <path d="M5 12H15" />
+      <path d="M5 17H13" />
+      <path d="M19 7V17" />
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 12L10 18L20 6" />
+      <path d="M4 6H10V12" />
+    </svg>
+  ),
+];
 
 export const solutionData: Record<string, ProductItem[]> = {
   "Solution by Industry": [
-    { name: "Education",                   desc: "Menyediakan teknologi terbaru untuk mendukung pembelajaran digital yang efektif dan inovatif.",              href: "/cloud-solution", icon: solutionIconCloud },
-    { name: "Finance",                     desc: "Mengelola finansial company Anda dengan solusi layanan yang aman dan terpercaya.",                           href: "/cloud-solution", icon: solutionIconCloud },
-    { name: "Retail",                      desc: "Meningkatkan bisnis retail Anda menjadi lebih efisien dengan kinerja yang maksimal.",                        href: "/cloud-solution", icon: solutionIconCloud },
-    { name: "Tour & Travel",               desc: "Menawarkan sistem terdepan dengan teknologi canggih untuk bisnis tour dan travel Anda.",                     href: "/cloud-solution", icon: solutionIconCloud },
-    { name: "e-Commerce",                  desc: "Mengoptimalkan pertumbuhan bisnis E-Commerce Anda dengan aman dan scalable.",                                href: "/cloud-solution", icon: solutionIconCloud },
-    { name: "Manufacturing & Distribution",desc: "Meningkatkan produktivitas bisnis manufaktur dan distribusi Anda menjadi lebih optimal.",                   href: "/cloud-solution", icon: solutionIconCloud },
-    { name: "Medical & Healthcare",        desc: "Memberikan layanan solusi yang inovatif untuk mendukung efisiensi pelayanan dan kualitas kesehatan lebih baik.", href: "/cloud-solution", icon: solutionIconCloud },
-    { name: "Media",                       desc: "Mendukung kebutuhan pada industri media Anda dengan kecepatan dan skalabilitas tanpa batas.",                href: "/cloud-solution", icon: solutionIconCloud },
-    { name: "Government",                  desc: "Solusi infrastruktur digital yang andal untuk pemerintahan.",                                               href: "/cloud-solution", icon: solutionIconCloud },
+    { name: "Education",                   desc: "Menyediakan teknologi terbaru untuk mendukung pembelajaran digital yang efektif dan inovatif.",              href: "/cloud-solution", icon: solutionIndustryIcons[0] },
+    { name: "Finance",                     desc: "Mengelola finansial company Anda dengan solusi layanan yang aman dan terpercaya.",                           href: "/cloud-solution", icon: solutionIndustryIcons[1] },
+    { name: "Retail",                      desc: "Meningkatkan bisnis retail Anda menjadi lebih efisien dengan kinerja yang maksimal.",                        href: "/cloud-solution", icon: solutionIndustryIcons[2] },
+    { name: "Tour & Travel",               desc: "Menawarkan sistem terdepan dengan teknologi canggih untuk bisnis tour dan travel Anda.",                     href: "/cloud-solution", icon: solutionIndustryIcons[3] },
+    { name: "e-Commerce",                  desc: "Mengoptimalkan pertumbuhan bisnis E-Commerce Anda dengan aman dan scalable.",                                href: "/cloud-solution", icon: solutionIndustryIcons[4] },
+    { name: "Manufacturing & Distribution",desc: "Meningkatkan produktivitas bisnis manufaktur dan distribusi Anda menjadi lebih optimal.",                   href: "/cloud-solution", icon: solutionIndustryIcons[5] },
+    { name: "Medical & Healthcare",        desc: "Memberikan layanan solusi yang inovatif untuk mendukung efisiensi pelayanan dan kualitas kesehatan lebih baik.", href: "/cloud-solution", icon: solutionIndustryIcons[6] },
+    { name: "Media",                       desc: "Mendukung kebutuhan pada industri media Anda dengan kecepatan dan skalabilitas tanpa batas.",                href: "/cloud-solution", icon: solutionIndustryIcons[7] },
+    { name: "Government",                  desc: "Solusi infrastruktur digital yang andal untuk pemerintahan.",                                               href: "/cloud-solution", icon: solutionIndustryIcons[8] },
   ],
   "Solution by Apps": [
-    { name: "OpenClaw",  desc: "AI Agent Pribadi yang Aktif 24/7 di Server Anda.",                                              badge: "HOT", href: "/openclaw", icon: solutionIconApps },
-    { name: "Paperclip", desc: "Paperclip memudahkan Anda mengatur dan mengelola pekerjaan dalam satu sistem.",                               href: "/paperclip", icon: solutionIconApps },
-    { name: "N8n",       desc: "Self Hosted n8n terbaik untuk otomasi & AI workflow bisnis Anda.",                                           href: "/backup-solution", icon: solutionIconApps },
+    { name: "OpenClaw",  desc: "AI Agent Pribadi yang Aktif 24/7 di Server Anda.",                                              badge: "HOT", href: "/openclaw", icon: solutionAppIcons[0] },
+    { name: "Paperclip", desc: "Paperclip memudahkan Anda mengatur dan mengelola pekerjaan dalam satu sistem.",                               href: "/paperclip", icon: solutionAppIcons[1] },
+    { name: "N8n",       desc: "Self Hosted n8n terbaik untuk otomasi & AI workflow bisnis Anda.",                                           href: "/backup-solution", icon: solutionAppIcons[2] },
   ],
 };
 
 // ============================================================
 // SHARED: FOOTER BANNER
 // ============================================================
-function MenuFooter() {
+interface MenuFooterProps {
+  title?: string;
+  description?: string;
+  buttonLabel?: string;
+  buttonHref?: string;
+}
+
+function MenuFooter({
+  title = "Request Penawaran",
+  description = "Anda butuh spesifikasi server custom untuk kebutuhan bisnis Anda? Silakan ajukan formulir Request Penawaran server custom yang akan dibantu oleh tim IDCloudHost.",
+  buttonLabel = "Selengkapnya",
+  buttonHref = "/contact",
+}: MenuFooterProps) {
   return (
     <div className="bg-[#016dfc] p-8 flex flex-col lg:flex-row justify-between items-center text-white gap-6">
       <div className="flex flex-col lg:flex-row lg:items-center gap-6 flex-1 w-full">
         <h4 className="text-2xl font-bold leading-tight min-w-[180px]">
-          Request<br />Penawaran
+          {title}
         </h4>
         <p className="text-sm opacity-95 leading-relaxed max-w-2xl">
-          Anda butuh spesifikasi server custom untuk kebutuhan bisnis Anda? Silakan ajukan formulir{" "}
-          <strong>Request Penawaran</strong> server custom yang akan dibantu oleh tim IDCloudHost.{" "}
-          <strong>Konsultasi Gratis!</strong>
+          {description}
         </p>
       </div>
-      <button className="px-6 py-3 rounded-lg bg-white text-slate-800 font-bold text-sm hover:bg-slate-50 transition-all flex-shrink-0 active:scale-95">
-        Selengkapnya
+      <button
+        onClick={() => buttonHref && window.location.assign(buttonHref)}
+        className="px-6 py-3 rounded-lg bg-white text-slate-800 font-bold text-sm hover:bg-slate-50 transition-all flex-shrink-0 active:scale-95"
+      >
+        {buttonLabel}
       </button>
     </div>
   );
@@ -318,11 +543,11 @@ function ProductCard({ product }: { product: ProductItem }) {
   return (
     <div
       onClick={() => product.href && navigate(product.href)}
-      className={`p-5 border border-slate-200 rounded-xl hover:bg-[#016dfc]/10 transition-all flex gap-4 bg-white group ${
+      className={`p-5 border border-slate-200 rounded-xl hover:bg-[#016dfc]/10 transition-all flex items-start gap-2 bg-white group ${
         product.href ? "cursor-pointer" : "cursor-default"
       }`}
     >
-      <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-[#016dfc]">
+      <div className="flex-shrink-0 w-8 h-8 flex items-start justify-center text-[#016dfc]">
         {product.icon}
       </div>
       <div>
@@ -458,7 +683,12 @@ export function SolutionMegaMenu({ onMouseEnter, onMouseLeave }: MegaMenuProps) 
           </div>
         </div>
 
-        <MenuFooter />
+        <MenuFooter
+          title="Customer"
+          description="olusi layanan terbaik untuk Anda! Bersama IDCloudHost, Temukan solusi yang tepat untuk mengembangkan bisnis Anda dalam berbagai bidang yang berbeda. Mari simak testimoni dari para pelanggan unggulan untuk layanan IDCloudHost!"
+          buttonLabel="Selengkapnya"
+          buttonHref="/solusi"
+        />
       </div>
     </div>
   );
@@ -469,24 +699,155 @@ export function SolutionMegaMenu({ onMouseEnter, onMouseLeave }: MegaMenuProps) 
 // ============================================================
 // DATA PROGRAM
 // ============================================================
-const programIcon = (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="3" width="18" height="18" rx="2" />
-    <path d="M8 9h8M8 13h6M8 17h4" />
-  </svg>
-);
+const programIcons: React.ReactNode[] = [
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 6H20M4 12H20M4 18H14" />
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3L16 7H8L12 3Z" />
+      <path d="M8 21H16L12 17L8 21Z" />
+      <path d="M6 7V17" />
+      <path d="M18 7V17" />
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 3V1M12 23V21M3 12H1M23 12H21M5.6 5.6L4.2 4.2M19.8 19.8L18.4 18.4M5.6 18.4L4.2 19.8M19.8 4.2L18.4 5.6" />
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="16" rx="3" />
+      <path d="M8 8H16" />
+      <path d="M8 12H14" />
+      <path d="M8 16H12" />
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3L19 8V16L12 21L5 16V8L12 3Z" />
+      <path d="M12 7V13" />
+      <path d="M12 17H12.01" />
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 5H20V19H14L12 21L10 19H4V5Z" />
+      <path d="M8 9H16" />
+      <path d="M8 13H12" />
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 21C16.4183 21 20 17.4183 20 13C20 8.58172 16.4183 5 12 5C7.58172 5 4 8.58172 4 13C4 17.4183 7.58172 21 12 21Z" />
+      <path d="M8 13H16" />
+      <path d="M12 9V17" />
+    </svg>
+  ),
+];
+
+const helpIcons: React.ReactNode[] = [
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 6H20V18H4V6Z" />
+      <path d="M8 10H16" />
+      <path d="M8 14H14" />
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 5H20V19H4V5Z" />
+      <path d="M4 9L12 13L20 9" />
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 4H19V20H5V4Z" />
+      <path d="M9 8H15" />
+      <path d="M9 12H15" />
+      <path d="M9 16H13" />
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 6H20L14 12L20 18H4" />
+      <path d="M8 8V16" />
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="4" y="7" width="16" height="10" rx="2" />
+      <path d="M4 11H20" />
+      <path d="M8 17V14" />
+      <path d="M16 17V14" />
+    </svg>
+  ),
+  (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M7 7H17V17H7V7Z" />
+      <path d="M9 11H15" />
+      <path d="M9 15H11" />
+      <path d="M17 7L21 3" />
+    </svg>
+  ),
+];
 
 export const programData: ProductItem[] = [
-  { name: "Beasiswa", desc: "Program percepatan untuk startup digital Indonesia.", href: "/program/startup", icon: programIcon },
-  { name: "Affiliates", desc: "Pelatihan cloud dan teknologi terbaru untuk mahasiswa & profesional.", href: "/program/academy", icon: programIcon },
-  { name: "Event & Program", desc: "Komunitas pengguna dan developer IDCloudHost.", href: "/program/community", icon: programIcon },
-  { name: "Partnership", desc: "Webinar rutin seputar cloud, AI, dan teknologi digital.", href: "/program/webinar", icon: programIcon },
-  { name: "Program Ekabima", desc: "Kompetisi coding dan inovasi digital tahunan.", href: "/program/hackathon", icon: programIcon },
-  { name: "Program NGO Go Digital", desc: "Beasiswa teknologi untuk pelajar dan mahasiswa.", href: "/program/scholarship", icon: programIcon },
-  { name: "Program Domain Gratis", desc: "Program kemitraan bisnis dan teknologi.", href: "/program/partner", icon: programIcon },
+  { name: "Beasiswa", desc: "Program percepatan untuk startup digital Indonesia.", href: "/program/startup", icon: programIcons[0] },
+  { name: "Affiliates", desc: "Pelatihan cloud dan teknologi terbaru untuk mahasiswa & profesional.", href: "/program/academy", icon: programIcons[1] },
+  { name: "Event & Program", desc: "Komunitas pengguna dan developer IDCloudHost.", href: "/program/community", icon: programIcons[2] },
+  { name: "Partnership", desc: "Webinar rutin seputar cloud, AI, dan teknologi digital.", href: "/program/webinar", icon: programIcons[3] },
+  { name: "Program Ekabima", desc: "Kompetisi coding dan inovasi digital tahunan.", href: "/program/hackathon", icon: programIcons[4] },
+  { name: "Program NGO Go Digital", desc: "Beasiswa teknologi untuk pelajar dan mahasiswa.", href: "/program/scholarship", icon: programIcons[5] },
+  { name: "Program Domain Gratis", desc: "Program kemitraan bisnis dan teknologi.", href: "/program/partner", icon: programIcons[6] },
 ];
+
+export const helpData: ProductItem[] = [
+  { name: "Panduan", desc: "Kumpulan tutorial praktis dan langkah demi langkah.", href: "/bantuan/panduan", icon: helpIcons[0] },
+  { name: "Blog", desc: "Artikel terbaru seputar hosting, cloud, dan keamanan digital.", href: "/bantuan/blog", icon: helpIcons[1] },
+  { name: "Kamus Hosting", desc: "Istilah penting hosting dijelaskan dengan mudah dan cepat.", href: "/bantuan/kamus-hosting", icon: helpIcons[2] },
+  { name: "Tiket", desc: "Ajukan dan pantau tiket dukungan langsung dari customer service.", href: "/bantuan/tiket", icon: helpIcons[3] },
+  { name: "Pembayaran", desc: "Informasi cara bayar dan metode pembayaran yang tersedia.", href: "/bantuan/pembayaran", icon: helpIcons[4] },
+  { name: "Kontak", desc: "Hubungi tim support bila butuh bantuan cepat dan personal.", href: "/bantuan/kontak", icon: helpIcons[5] },
+];
+
+// ============================================================
+// KOMPONEN: BANTUAN MEGA MENU
+// Tanpa sidebar/tab, langsung tampil 6 card
+// ============================================================
+export function HelpMegaMenu({ onMouseEnter, onMouseLeave }: MegaMenuProps) {
+  return (
+    <div
+      className="fixed left-1/2 -translate-x-1/2 pt-2 z-[101]"
+      style={{ top: "64px", width: "min(1200px, 95vw)" }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      <div className="bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col text-slate-800">
+        <div className="flex-1 p-8 bg-white">
+          <h3 className="text-xl font-bold mb-6 text-slate-800">Bantuan</h3>
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300"
+          >
+            {helpData.map((item, i) => (
+              <ProductCard key={i} product={item} />
+            ))}
+          </div>
+        </div>
+        <MenuFooter
+          title="Bantuan CS 24/7"
+          description="Tim Support dan Customer Service IDCloudhost bekerja setiap hari untuk memberikan layanan terbaik untuk kebutuhan Website Anda."
+          buttonLabel="Selengkapnya"
+          buttonHref="/bantuan"
+        />
+      </div>
+    </div>
+  );
+}
 
 // ============================================================
 // KOMPONEN: PROGRAM MEGA MENU
@@ -504,14 +865,19 @@ export function ProgramMegaMenu({ onMouseEnter, onMouseLeave }: MegaMenuProps) {
         <div className="flex-1 p-8 bg-white">
           <h3 className="text-xl font-bold mb-6 text-slate-800">Program</h3>
           <div
-            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300"
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300"
           >
             {programData.map((item, i) => (
               <ProductCard key={i} product={item} />
             ))}
           </div>
         </div>
-        <MenuFooter />
+        <MenuFooter
+          title="Partnership & Program"
+          description="IDCloudhost sangat yakin bahwa kolaborasi dapat membantu bisnis bisa berlari makin kencang. Ayo berkolaborasi dengan IDCloudHost!"
+          buttonLabel="Selengkapnya"
+          buttonHref="/program"
+        />
       </div>
     </div>
   );
@@ -574,5 +940,4 @@ export function LoginMegaMenu({ onMouseEnter, onMouseLeave }: MegaMenuProps) {
     </div>
   );
 }
-// ...existing code...
 

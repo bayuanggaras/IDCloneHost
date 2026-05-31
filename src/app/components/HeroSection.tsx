@@ -136,6 +136,13 @@ function ConfiguratorCard() {
 
   const formattedPrice = new Intl.NumberFormat("id-ID").format(totalPrice);
 
+  const getRangeBackground = (value: number, min: number, max: number) => {
+    const percent = ((value - min) / (max - min)) * 100;
+    return {
+      background: `linear-gradient(90deg, #016dfc ${percent}%, #e2e8f0 ${percent}%)`,
+    };
+  };
+
   return (
     <div
       className="bg-white rounded-2xl p-6 lg:p-8 w-full max-w-[480px] text-slate-800 relative z-10 flex flex-col font-['Figtree']"
@@ -170,7 +177,8 @@ function ConfiguratorCard() {
             max="16"
             value={cpu}
             onChange={(e) => setCpu(Number(e.target.value))}
-            className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#016dfc]"
+            className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-[#016dfc] range-square"
+            style={getRangeBackground(cpu, 1, 16)}
           />
         </div>
 
@@ -186,7 +194,8 @@ function ConfiguratorCard() {
             max="64"
             value={ram}
             onChange={(e) => setRam(Number(e.target.value))}
-            className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#016dfc]"
+            className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-[#016dfc] range-square"
+            style={getRangeBackground(ram, 1, 64)}
           />
         </div>
 
@@ -203,7 +212,8 @@ function ConfiguratorCard() {
             step="10"
             value={storage}
             onChange={(e) => setStorage(Number(e.target.value))}
-            className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#016dfc]"
+            className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-[#016dfc] range-square"
+            style={getRangeBackground(storage, 20, 500)}
           />
           
         </div>
@@ -237,9 +247,8 @@ function ConfiguratorCard() {
           Deploy now
         </button>
       </div>
-      <p className="text-base mb-6 text-slate-500">
-        Prosesor AMD terbaru dengan efisiensi multi threading tinggi untuk
-        skalabilitas dan pemrosesan yang lebih optimal.
+      <p className="text-xs mt-4 text-slate-500">
+        *Harga yang ditampilkan adalah simulasi. Untuk informasi ketersediaan dan detail lebih lanjut ke console.idcloudhost.com
       </p>
     </div>
   );
@@ -269,7 +278,7 @@ export function HeroSection(props: HeroSectionProps) {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden font-['Figtree'] bg-[#020617]">
+    <section className="relative min-h-screen overflow-visible font-['Figtree'] bg-[#020617]">
 
       {/* ================================================= */}
       {/* BACKGROUND */}

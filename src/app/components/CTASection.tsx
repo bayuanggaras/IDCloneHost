@@ -105,7 +105,7 @@ export function CTASection(props: CTASectionProps) {
               {/* Kartu Newsletter */}
               <div
                 className="relative z-20 rounded-2xl p-6 shadow-xl"
-                style={{ backgroundImage: "linear-gradient(-15deg, rgb(133, 77, 253) 0%, rgb(77, 168, 253) 100%)" }}
+                style={{ backgroundImage: "var(--Background-Hero, linear-gradient(165deg, #1C7DFF 11.41%, #016DFC 90.01%))" }}
               >
                 <p className="text-white font-bold text-base mb-3 capitalize">{newsletterTitle}</p>
                 <div className="flex gap-3">
@@ -114,9 +114,9 @@ export function CTASection(props: CTASectionProps) {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={newsletterPlaceholder}
-                    className="flex-1 bg-white/20 backdrop-blur-sm border border-white rounded-xl px-4 py-3 text-white placeholder-white/70 text-sm outline-none focus:bg-white/30 transition-colors min-w-0"
+                    className="flex-1 bg-white/20 backdrop-blur-sm rounded-xl px-4 py-3 text-white placeholder-white/70 text-sm outline-none focus:bg-white/30 transition-colors min-w-0"
                   />
-                  <button className="bg-white/20 backdrop-blur-sm border border-white rounded-xl px-4 py-3 text-white text-sm font-bold hover:bg-white/30 transition-colors whitespace-nowrap">
+                  <button className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-3 text-white text-sm font-bold hover:bg-white/30 transition-colors whitespace-nowrap">
                     {newsletterButtonLabel}
                   </button>
                 </div>

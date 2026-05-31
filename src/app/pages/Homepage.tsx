@@ -9,6 +9,9 @@ import { FeaturesSection }     from "../components/FeaturesSection";
 import { CTASection }     from "../components/CTASection";
 import { Footer }         from "../components/Footer";
 import promoBannerImg from "../../assets/Cloud VPS Annive.webp";
+import { TrustedBySection } from "../components/TrustedBySection";
+import { InfoCardsSection } from "../components/InfoCardsSection";
+import { ControlPanelSection } from "../components/ControlPanelSection";
 
 export default function Homepage() {
   return (
@@ -34,9 +37,41 @@ export default function Homepage() {
       <ProductShowcase
       />
 
+      <TrustedBySection
+      />
+
       <FeaturesSection
         title="Fitur Unggulan Kami"
         subtitle="Inilah fitur-fitur yang membuat kami berbeda"
+      />
+
+
+    <ControlPanelSection />
+
+    <InfoCardsSection
+        title="Insights & Resources"
+        subtitle="Dapatkan wawasan, panduan & tips terkini seputar dunia cloud & teknologi"
+        hideSubtitle
+        layout="centered"
+        columns={4}
+        items={[
+          {
+            title: "Knowledge Base",
+            href: "/cloud-vps",
+          },
+          {
+            title: "Server Status",
+            href: "/paperclip",
+          },
+          {
+            title: "IDCloudHost API",
+            href: "/openclaw",
+          },
+          {
+            title: "TOS",
+            href: "/",
+          },
+        ]}
       />
 
       {/* CTA dengan teks berbeda */}

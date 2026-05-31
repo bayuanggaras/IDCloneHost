@@ -6,3 +6,67 @@
 body, * {
   font-family: 'DM Sans', sans-serif;
 }
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom square thumb for range sliders in ConfiguratorCard */
+input.range-square {
+  background: transparent;
+}
+
+input.range-square::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #016dfc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8.5 15.5L5 12l3.5-3.5' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.5 15.5L19 12l-3.5-3.5' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/50% no-repeat;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  margin-top: -8px;
+}
+
+input.range-square::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 9999px;
+}
+
+input.range-square::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #016dfc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8.5 15.5L5 12l3.5-3.5' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.5 15.5L19 12l-3.5-3.5' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/50% no-repeat;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  margin-top: -8px;
+}
+
+input.range-square::-moz-range-track {
+  height: 8px;
+  border-radius: 9999px;
+}
+
+input.range-square::-ms-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #016dfc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8.5 15.5L5 12l3.5-3.5' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.5 15.5L19 12l-3.5-3.5' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/50% no-repeat;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  margin-top: -8px;
+}
+
+input.range-square::-ms-track {
+  height: 8px;
+  border-radius: 9999px;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}

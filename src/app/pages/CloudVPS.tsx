@@ -5,8 +5,7 @@
 
 import { HeroSection }    from "../components/HeroSection";
 import { DescSection }    from "../components/DescSection";
-import { WhySection }     from "../components/WhySection";
-import { WhoSection }     from "../components/WhoSection";
+import { InfoCardsSection } from "../components/InfoCardsSection";
 import { FAQSection }     from "../components/FAQSection";
 import { CTASection }     from "../components/CTASection";
 import { Footer }         from "../components/Footer";
@@ -47,25 +46,31 @@ export default function CloudVPS() {
       />
 
       {/* Why section dengan judul berbeda */}
-      <WhySection
-        title="Mengapa Memilih Produk Kami?"
-        subtitle="Ini alasan kenapa produk kami lebih baik"
-      />
-
-      {/* Who section dengan audiens berbeda */}
-      <WhoSection
-        title="Siapa Target Pengguna Kami?"
-        subtitle="Cocok untuk berbagai kalangan"
-        audiences={[
+      <InfoCardsSection
+        title="Siapa yang Cocok dengan Cloud VPS Kami?"
+        subtitle="Satu section yang menampilkan target pengguna dan keunggulan layanan secara ringkas." 
+        layout="centered"
+        columns={4}
+        items={[
           {
             title: "Pelajar & Mahasiswa",
-            desc: "Ideal untuk kebutuhan tugas dan proyek akademik.",
-            icon: <span className="text-2xl">🎓</span>,
+            desc: "Ideal untuk kebutuhan tugas dan proyek akademik dengan resource yang scalable.",
+            accentColor: "bg-[#016dfc]",
           },
           {
             title: "Freelancer",
             desc: "Membantu mengatur proyek dan deadline lebih efisien.",
-            icon: <span className="text-2xl">💼</span>,
+            accentColor: "bg-[#0f7eff]",
+          },
+          {
+            title: "Startup & Bisnis Kecil",
+            desc: "Solusi cloud yang efisien untuk mendukung tumbuh kembang bisnis Anda.",
+            accentColor: "bg-[#1f7e3c]",
+          },
+          {
+            title: "Tim Operasional & Manajemen",
+            desc: "Memberi kendali penuh pada tim dalam mengelola aplikasi dan layanan digital.",
+            accentColor: "bg-[#8b5cf6]",
           },
         ]}
       />

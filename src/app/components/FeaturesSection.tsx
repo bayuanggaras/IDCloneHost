@@ -45,7 +45,7 @@ const defaultFeatures: FeatureItem[] = [
   },
   {
     title: "Support 24/7",
-    desc: "Tim support melayani setiap waktu & mempunyai pengalaman & bersertifikasi internasional dibidangnya untuk membantu permasalahan Anda.",
+    desc: "Tim support melayani setiap waktu & mempunyai pengalaman & bersertifikasi internasional dibidangnya untuk membantu Anda.",
     linkText: "Support",
     linkUrl: "#",
     icon: (
